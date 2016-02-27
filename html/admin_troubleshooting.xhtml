@@ -1,0 +1,36 @@
+<?xml version="1.0"?><!DOCTYPE html><xhtml:html  xmlns:ax="abc" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml"><xhtml:head ><xhtml:meta  content="xml" name="Keywords"></xhtml:meta><xhtml:title >Troubleshooting</xhtml:title><xhtml:meta  content="width=device-width, initial-scale=1" name="viewport"></xhtml:meta><xhtml:style  type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  pre { color:#800080;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body ><xhtml:nav ><xhtml:h2 >Contact</xhtml:h2><xhtml:ul ><xhtml:li >Phone: 027 2203796</xhtml:li><xhtml:li ><xhtml:a  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="addwebsite.xhtml">Add_Website</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="admin_todo.xhtml">Admin_todo</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="admin_troubleshooting.xhtml">Admin_troubleshooting</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section ><xhtml:a  href="index.xhtml"></xhtml:a><xhtml:br ></xhtml:br><xhtml:ul  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xh="http://www.w3.org/1999/xhtml">
+<symptom >Built system not working correctly</symptom>
+<possible_cause >Conflict between multiple installed copies</possible_cause>
+<corrective_actions >
+<xhtml:ol >
+<xhtml:li >Remove all copies from usr/lib/erlang and usr/local/erlang</xhtml:li>
+<xhtml:li >Reinstall with make install from latest version</xhtml:li>
+</xhtml:ol>
+</corrective_actions>
+<symptom >Laptop suspends when lid closed (not good when using laptop as server)</symptom>
+<possible_cause >Lid switch not ignored in /etc/systemd/logind.conf</possible_cause>
+<corrective_actions >
+Set entry HandleLidSwitch to ignore in /etc/systemd/logind.conf
+</corrective_actions>
+</xhtml:ul></xhtml:section></xhtml:body></xhtml:html>

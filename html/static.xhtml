@@ -1,0 +1,1040 @@
+<?xml version="1.0"?><!DOCTYPE html><xhtml:html  xmlns:ax="abc" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml"><xhtml:head ><xhtml:meta  content="xml" name="Keywords"></xhtml:meta><xhtml:title >static site</xhtml:title><xhtml:meta  content="width=device-width, initial-scale=1" name="viewport"></xhtml:meta><xhtml:style  type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  pre { color:#800080;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body ><xhtml:nav ><xhtml:h2 >Contact</xhtml:h2><xhtml:ul ><xhtml:li >Phone: 027 2203796</xhtml:li><xhtml:li ><xhtml:a  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="whatsxml.xhtml">whatsxml</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xmlproc.xhtml">Xml processing</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="namespaces.xhtml">namespaces</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xpath.xhtml">xpath</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xslt.xhtml">xslt</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="static.xhtml">static site</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="validation.xhtml">Validation</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="splitpages.xhtml">split_pages</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="insert.xhtml">insert_content</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="build.xhtml">build</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="futuredev.xhtml">FutureDev</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="rest.xhtml">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section ><xhtml:a  href="index.xhtml"><xhtml:img  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" src="images/hw.png" left="250px" width="100%"></xhtml:img></xhtml:a><xhtml:br ></xhtml:br><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Why  build a site this way?</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">In this lesson we will build a site with static content
+using the tools we have learnt thus far.  Why do it this way?
+A website can be viewed as an organised collection of pages. Editing pages on an adhoc basis can lead to inconsistency
+between pages.  This is partially overcome using shared css 
+stylesheets, however this does not model the relationship 
+between the pages.  Xml can model the relationship between
+the web pages, be they nested or disjoint sets.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">XSLT has been chosen as a templating tool (in preference
+to more modern and widely accepted standards such as django) because
+it is part of multimedia tool kitsnthat allow the production
+of other media formats such as pdf.  This is important in connection
+with publishing as I am also a director for a publishing company.  I
+had intended to style with XSL-FO in preference for CSS for the same
+reason but at the time I built this site I deferred XSL-FO as
+I had enough to learn at the time, and figured it could be
+retrofitted relatively easily.</xhtml:p><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">This site master file</xhtml:h2><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude"><pre >&lt;site xmlns:xf=&quot;http://www.w3.org/2002/xforms&quot;
+xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;
+xmlns:xhtml=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+  &lt;siteurl&gt;www.tony.gen.nz/xml&lt;/siteurl&gt;
+  &lt;html_dir&gt;html&lt;/html_dir&gt;
+  &lt;resources&gt;
+    &lt;copydir&gt;html&lt;/copydir&gt;
+  &lt;/resources&gt;
+  &lt;file_headers&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot;?&gt;&lt;!DOCTYPE html&gt;]]&gt;&lt;/file_headers&gt;
+  &lt;pages&gt;
+    &lt;homepage&gt;index.xhtml&lt;/homepage&gt;
+    &lt;navtype&gt;mesh&lt;/navtype&gt;
+    &lt;contact-phone&gt;Phone: 027 2203796&lt;/contact-phone&gt;
+    &lt;contact-email&gt;&lt;xhtml:a href=&quot;mailto:tony@tony.gen.nz&quot;&gt;Email: tony@tony.gen.nz&lt;/xhtml:a&gt;&lt;/contact-email&gt;
+    &lt;banner_image&gt;&lt;xhtml:img src=&quot;images/hw.png&quot; left=&quot;250px&quot; width=&quot;100%&quot; /&gt;&lt;/banner_image&gt;
+    &lt;xi:include href=&quot;index.xml&quot; parse=&quot;xml&quot;/&gt;
+  &lt;/pages&gt;
+  &lt;pages&gt;
+    &lt;homepage&gt;index.xhtml&lt;/homepage&gt;
+    &lt;navtype&gt;mesh&lt;/navtype&gt;
+    &lt;contact-phone&gt;Phone: 027 2203796&lt;/contact-phone&gt;
+    &lt;contact-email&gt;&lt;xhtml:a href=&quot;mailto:tony@tony.gen.nz&quot;&gt;Email: tony@tony.gen.nz&lt;/xhtml:a&gt;&lt;/contact-email&gt;
+    &lt;banner_image&gt;&lt;xhtml:img src=&quot;images/hw.png&quot; left=&quot;250px&quot; width=&quot;100%&quot; /&gt;&lt;/banner_image&gt;
+    &lt;xi:include href=&quot;intro.xml&quot; parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;whatsxml.xml&quot; parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;xmlprocessing.xml&quot; parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;namespaces.xml&quot;  parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;xpath.xml&quot;  parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;xslt.xml&quot; parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;staticsite.xml&quot; parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;validation.xml&quot; parse=&quot;xml&quot;/&gt;
+    &lt;xi:include href=&quot;splitpages.xml&quot; parse=&quot;xml&quot; /&gt;
+    &lt;xi:include href=&quot;inserting_content.xml&quot; parse=&quot;xml&quot; /&gt;
+    &lt;xi:include href=&quot;build.xml&quot; parse=&quot;xml&quot; /&gt;
+    &lt;xi:include href=&quot;future_development.xml&quot; parse=&quot;xml&quot; /&gt;
+    &lt;xi:include href=&quot;rest.xml&quot; parse=&quot;xml&quot; /&gt;
+  &lt;/pages&gt;
+  &lt;pages&gt;
+    &lt;homepage&gt;index.xhtml&lt;/homepage&gt;
+    &lt;navtype&gt;mesh&lt;/navtype&gt;
+    &lt;contact-phone&gt;Phone: 027 2203796&lt;/contact-phone&gt;
+    &lt;contact-email&gt;&lt;xhtml:a href=&quot;mailto:tony@tony.gen.nz&quot;&gt;Email: tony@tony.gen.nz&lt;/xhtml:a&gt;&lt;/contact-email&gt;
+    &lt;banner_image&gt;&lt;img src=&quot;images/hw.png&quot; left=&quot;250px&quot; width=&quot;100%&quot; /&gt;&lt;/banner_image&gt;
+    &lt;xi:include href=&quot;publickey.xml&quot; parse=&quot;xml&quot; /&gt;
+  &lt;/pages&gt;    
+  &lt;pages&gt;
+    &lt;homepage&gt;index.xhtml&lt;/homepage&gt;
+    &lt;navtype&gt;mesh&lt;/navtype&gt;
+    &lt;contact-phone&gt;Phone: 027 2203796&lt;/contact-phone&gt;
+    &lt;contact-email&gt;&lt;xhtml:a href=&quot;mailto:tony@tony.gen.nz&quot;&gt;Email: tony@tony.gen.nz&lt;/xhtml:a&gt;&lt;/contact-email&gt;
+    &lt;banner_image&gt;&lt;img src=&quot;images/hw.png&quot; left=&quot;250px&quot; width=&quot;100%&quot; /&gt;&lt;/banner_image&gt;
+    &lt;xi:include href=&quot;addwebsite.xml&quot; parse=&quot;xml&quot; /&gt;
+    &lt;xi:include href=&quot;admin_todo.xml&quot; parse=&quot;xml&quot; /&gt;
+    &lt;xi:include href=&quot;admin_troubleshooting.xml&quot; parse=&quot;xml&quot; /&gt;
+  &lt;/pages&gt;
+&lt;/site&gt;
+ 
+</pre></xhtml:pre><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">This page definition</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">This is the definition for this page.  Everything about this
+page, its name, its url and all other things required for its
+generation are stored here...</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude"><pre >&lt;page xmlns:xhtml=&quot;http://www.w3.org/1999/xhtml&quot;  xmlns:ax=&quot;abc&quot; xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;&gt;
+&lt;name &gt;static site&lt;/name&gt;
+&lt;title &gt;static site&lt;/title&gt;
+&lt;url &gt;static.xhtml&lt;/url&gt;
+&lt;keywords &gt;xml&lt;/keywords&gt;
+&lt;pageheader &gt;Greenrose&lt;/pageheader&gt;
+&lt;ax:content xmlns:ax=&quot;abc&quot;&gt;
+&lt;xhtml:h2&gt;Why  build a site this way?&lt;/xhtml:h2&gt;
+&lt;xhtml:p&gt;In this lesson we will build a site with static content
+using the tools we have learnt thus far.  Why do it this way?
+A website can be viewed as an organised collection of pages. Editing pages on an adhoc basis can lead to inconsistency
+between pages.  This is partially overcome using shared css 
+stylesheets, however this does not model the relationship 
+between the pages.  Xml can model the relationship between
+the web pages, be they nested or disjoint sets.&lt;/xhtml:p&gt;
+&lt;xhtml:p&gt;XSLT has been chosen as a templating tool (in preference
+to more modern and widely accepted standards such as django) because
+it is part of multimedia tool kitsnthat allow the production
+of other media formats such as pdf.  This is important in connection
+with publishing as I am also a director for a publishing company.  I
+had intended to style with XSL-FO in preference for CSS for the same
+reason but at the time I built this site I deferred XSL-FO as
+I had enough to learn at the time, and figured it could be
+retrofitted relatively easily.&lt;/xhtml:p&gt;
+&lt;xhtml:h2 &gt;This site master file&lt;/xhtml:h2&gt;
+&lt;xhtml:pre &gt;&lt;xi:include  parse=&quot;text&quot; href=&quot;pagedata.xml&quot;&gt;&lt;/xi:include&gt;&lt;/xhtml:pre&gt;
+&lt;xhtml:h2&gt;This page definition&lt;/xhtml:h2&gt;
+
+&lt;xhtml:p&gt;This is the definition for this page.  Everything about this
+page, its name, its url and all other things required for its
+generation are stored here...&lt;/xhtml:p&gt;
+&lt;xhtml:pre&gt;&lt;xi:include href=&quot;staticsite.xml&quot; parse=&quot;text&quot;/&gt;&lt;/xhtml:pre&gt;
+
+&lt;xhtml:h2 &gt;An XSLT utility file&lt;/xhtml:h2&gt;
+&lt;xhtml:p&gt;
+This is one of two files for converting this site data into html.
+&lt;/xhtml:p&gt;
+&lt;xhtml:pre &gt;&lt;xi:include  parse=&quot;text&quot; href=&quot;ajw_utils.xsl&quot;&gt;&lt;/xi:include&gt;&lt;/xhtml:pre&gt;&lt;xhtml:h2 &gt;XSLT file to generate HTML&lt;/xhtml:h2&gt;
+&lt;xhtml:p&gt;
+This file generates each web page including navigation bar.
+&lt;/xhtml:p&gt;
+&lt;xhtml:pre&gt;
+&lt;xi:include  href=&quot;make_web.xsl&quot; parse=&quot;text&quot;&gt;&lt;/xi:include&gt;
+&lt;/xhtml:pre&gt;
+&lt;xhtml:h2&gt;Extra functionality from a SAX parser&lt;/xhtml:h2&gt;
+&lt;xhtml:p&gt;During construction it was found that the xmllint
+xinclude did not work properly with the parse=&quot;text&quot; attribute.
+It was also required to find a way to split up the site into
+separate html pages and to store and save into these pages
+processing instructions.&lt;/xhtml:p&gt;
+&lt;xhtml:p&gt;These functions were built using the erlsom SAX parser
+and custom erlang programming.  The disadvantage of going
+to SAX and erlang compared to using XSLT is obvious, the
+program is much longer. However the advantage is that
+using a general purpose language like erlang allows complete
+flexibility.&lt;/xhtml:p&gt;  
+&lt;xhtml:p&gt;Finally, there is a significant amount of code dedicated
+to self testing.&lt;/xhtml:p&gt;
+&lt;xhtml:p&gt;This code is shown here.&lt;/xhtml:p&gt;
+&lt;xhtml:pre&gt;
+&lt;xi:include href=&quot;../src/xslt_extn.erl&quot; parse=&quot;text&quot; /&gt;
+&lt;/xhtml:pre&gt;
+&lt;xhtml:h2 &gt;A build script to put it all together&lt;/xhtml:h2&gt;
+&lt;xhtml:pre &gt;
+&lt;![CDATA[
+cd site_data
+escript ../ebin/xslt_extn.beam &lt; pagedata.xml &gt; fullsite.xml 2&gt; errors.txt
+xsltproc ../src/make_web2.xsl fullsite.xml &gt; allpages.xml
+escript ../ebin/xslt_extn.beam +finaloutput &lt; allpages.xml 
+mv *.html ../html
+]]&gt;
+&lt;/xhtml:pre&gt;
+&lt;xhtml:p&gt;The first call to xslt_extn includes all the page
+definitions in pagedata.xml creating the file fillsite.xml.
+This data is then put through xslt processing to form a
+new file allpages.xml.  This file has all the webpages
+properly laid out, but all in a single file.  xslt_extn
+is called again to split these files and output the
+processing instructions into the web pages.  Finally
+these html web pages are copied to the websites html directory.
+&lt;/xhtml:p&gt;
+&lt;/ax:content&gt;&lt;/page&gt;
+</pre></xhtml:pre><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">An XSLT utility file</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+This is one of two files for converting this site data into html.
+</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude"><pre >&lt;!--
+Author:  Tony Wallace
+Contact: tony@tony.gen.nz
+
+Licence: This program is donated to the public domain.
+Freely I have received, freely I give.
+
+I acknowledge the work of the w3 consortium that made
+this work possible.
+--&gt;
+&lt;!--
+A few xslt utilities..
+
+The cdata tag encloses the result of apply templates
+into a ddata tag with a the data quoted by CDATA tags.
+A ddata maintains the CDATA tags through processing
+steps and stops the CDATA tags from disappearing by
+putting ddata into the output cdata-section-elements.
+--&gt;
+&lt;xsl:stylesheet
+  xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&quot;1.0&quot;
+  xmlns:ax=&quot;abc&quot;&gt;
+  
+&lt;xsl:output method = &quot;xml&quot;/&gt;
+&lt;xsl:template match=&quot;/&quot;&gt;
+  &lt;xsl:apply-templates/&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;@*&quot;&gt;
+  &lt;xsl:attribute name=&quot;{name()}&quot;&gt;
+    &lt;xsl:message&gt;create attribute &lt;xsl:value-of select=&quot;name()&quot;/&gt; = 
+         &lt;xsl:value-of select=&quot;.&quot; /&gt; &lt;/xsl:message&gt;
+    &lt;xsl:value-of select=&quot;.&quot;/&gt;
+  &lt;/xsl:attribute&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;text()&quot;&gt;
+  &lt;xsl:value-of select=&quot;.&quot;/&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;node()&quot;&gt;
+  &lt;xsl:message&gt;general match &lt;xsl:value-of select=&quot;name()&quot;/&gt;&lt;/xsl:message&gt;
+  &lt;xsl:element name=&quot;{name()}&quot;&gt;
+    &lt;xsl:apply-templates/&gt;
+  &lt;/xsl:element&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;text()&quot; name=&quot;insertBreaks&quot; mode=&quot;crtobr&quot;&gt;
+  &lt;xsl:param name=&quot;pText&quot; select=&quot;.&quot;/&gt;
+
+  &lt;xsl:choose&gt;
+    &lt;xsl:when test=&quot;not(contains($pText, &apos;&amp;#xA;&apos;))&quot;&gt;
+      &lt;xsl:copy-of select=&quot;$pText&quot;/&gt;
+    &lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;
+      &lt;xsl:value-of select=&quot;substring-before($pText, &apos;&amp;#xA;&apos;)&quot;/&gt;
+      &lt;br /&gt;
+      &lt;xsl:call-template name=&quot;insertBreaks&quot;&gt;
+	&lt;xsl:with-param name=&quot;pText&quot; select=
+	  &quot;substring-after($pText, &apos;&amp;#xA;&apos;)&quot;/&gt;
+      &lt;/xsl:call-template&gt;
+    &lt;/xsl:otherwise&gt;
+  &lt;/xsl:choose&gt;
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre></xhtml:pre><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">XSLT file to generate HTML</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+This file generates each web page including navigation bar.
+</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+<pre >&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+
+&lt;!--
+Note: xslt 1.0 cannot produce multiple output files
+This will have to be done externally by a shell script
+These directives are put into generated output by
+^filename:&lt;filename&gt;$ lines
+where &lt;filename&gt; is the text of the file name.
+
+This will be done by short erlang program
+through which this data file is piped.
+--&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; 
+		xmlns:ax=&quot;abc&quot; version=&quot;1.0&quot;&gt;
+  &lt;xsl:import href=&quot;ajw_utils.xsl&quot; /&gt;
+  &lt;xsl:template match=&apos;/site&apos;&gt;
+    &lt;xsl:for-each select=&quot;./pages&quot;&gt;
+      &lt;xsl:apply-templates/&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;pages&quot; name=&quot;pages-template&quot;&gt;
+  &lt;xsl:for-each select=&quot;page&quot;&gt;
+    &lt;xsl:apply-templates/&gt;
+  &lt;/xsl:for-each&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match=&quot;page&quot;&gt;
+&lt;!-- Comment in template --&gt;
+filename:&lt;xsl:value-of select=&quot;./url&quot; /&gt;
+&lt;xsl:message&gt;File &lt;xsl:value-of select=&quot;./url&quot; /&gt;&lt;/xsl:message&gt;
+&lt;xsl:text xml:space=&quot;preserve&quot; &gt;
+&lt;/xsl:text&gt;
+&lt;xsl:value-of disable-output-escaping=&quot;yes&quot; select=&quot;./file_headers&quot; /&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:xf=&quot;http://www.w3.org/2002/xforms&quot;&gt;
+
+&lt;head&gt;
+&lt;meta name=&quot;Keywords&quot; content=&apos;{keywords}&apos; /&gt;
+&lt;!-- Comment in template --&gt;
+&lt;title&gt;
+  &lt;xsl:value-of select=&quot;./title&quot; /&gt;
+&lt;/title&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+&lt;!-- for efficiencies sake consider separte template file.
+The advantage over inlining is that it gets loaded once for all pages --&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+&lt;/style&gt;
+  &lt;xsl:copy-of select=&quot;./model&quot; /&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav&gt;
+  &lt;h2&gt;Contact&lt;/h2&gt;
+  &lt;ul&gt;
+  &lt;li&gt;&lt;xsl:value-of select=&quot;ancestor::pages/contact-phone&quot;/&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;xsl:copy-of  select=&quot;ancestor::pages/contact-email/*&quot;/&gt;&lt;/li&gt;
+  &lt;xsl:choose&gt;
+    &lt;xsl:when test=&quot;ancestor::pages[navtype=&apos;mesh&apos;]&quot;&gt;
+      &lt;xsl:call-template name=&quot;meshindex&quot; /&gt;
+    &lt;/xsl:when&gt;
+    &lt;xsl:when test=&quot;ancestor::pages[navtype=&apos;linear&apos;]&quot;&gt;
+      &lt;xsl:call-template name=&quot;linearindex&quot; /&gt;
+    &lt;/xsl:when&gt;
+    &lt;xsl:otherwise&gt;
+      Failed to match index template:
+      &lt;xsl:value-of select=&quot;ancestor::pages/navtype&quot;/&gt; 
+      Current node is:
+      &lt;xsl:value-of select=&quot;string(./node())&quot; /&gt;
+    &lt;/xsl:otherwise&gt;
+  &lt;/xsl:choose&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt; 
+&lt;section&gt;
+  &lt;xsl:message&gt;section&lt;/xsl:message&gt;
+  &lt;a&gt;
+    &lt;xsl:attribute name=&quot;href&quot;&gt;
+      &lt;xsl:value-of select=&quot;ancestor::pages/homepage&quot;/&gt;
+    &lt;/xsl:attribute&gt;
+    &lt;xsl:copy-of select=&quot;ancestor::pages/banner_image/child::img&quot;/&gt;
+  &lt;/a&gt;
+  &lt;br /&gt;
+  &lt;xsl:apply-templates select=&quot;./content/*&quot;/&gt;
+&lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+     &lt;xsl:if test=&quot;./pages&quot;&gt;
+       &lt;xsl:call-template name=&quot;pages-template&quot;/&gt;
+     &lt;/xsl:if&gt;
+  &lt;/xsl:template&gt;
+
+&lt;xsl:template name=&quot;meshindex&quot;&gt;
+    &lt;xsl:for-each select=&quot;ancestor::pages/page&quot;&gt;
+      &lt;li&gt;
+	&lt;a&gt;
+	&lt;xsl:attribute name=&quot;href&quot;&gt;
+	  &lt;xsl:value-of select=&quot;.//url&quot;  /&gt;
+	&lt;/xsl:attribute&gt;
+	&lt;xsl:value-of select=&quot;.//name&quot; /&gt;
+	&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/xsl:for-each&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template name=&quot;linearindex&quot;&gt;
+    Mesh linear index
+    &lt;a href=&quot;{(ancestor::pages)[1]/page[1]/url}&quot;&gt;Home&lt;/a&gt;
+    &lt;a href=&quot;{ancestor::pages/page[1]}&quot;&gt;Start&lt;/a&gt;
+    &lt;a href=&quot;{ancestor::page/preceding-sibling::page[1]/url}&quot;&gt;Previous&lt;/a&gt;
+    &lt;a href=&quot;{ancestor::page/following-sibling::page[1]/url}&quot;&gt;Next&lt;/a&gt;
+&lt;/xsl:template&gt;
+
+
+&lt;/xsl:stylesheet&gt;
+</pre>
+</xhtml:pre><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Extra functionality from a SAX parser</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">During construction it was found that the xmllint
+xinclude did not work properly with the parse=&quot;text&quot; attribute.
+It was also required to find a way to split up the site into
+separate html pages and to store and save into these pages
+processing instructions.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">These functions were built using the erlsom SAX parser
+and custom erlang programming.  The disadvantage of going
+to SAX and erlang compared to using XSLT is obvious, the
+program is much longer. However the advantage is that
+using a general purpose language like erlang allows complete
+flexibility.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Finally, there is a significant amount of code dedicated
+to self testing.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">This code is shown here.</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+<pre >%%
+% Author:  Tony Wallace
+% Contact: tony@tony.gen.nz
+%
+% Licence: This program is donated to the public domain.
+% Freely I have received, freely I give.
+%
+% I acknowledge the work of the Ericsson Laboratories,
+% the creators of erlang, that made this work possible.
+%%
+-module(xslt_extn).
+
+%% An erlang module to provide:
+%%  xinclude text file inclusion
+%%  Splitting an xml file into several target files
+%%    (like opposite of file inclusion)
+%%  xml_text - this tag allows xml to be stored as escaped text
+%%    and expanded again when &quot;final-output&quot; is performed
+%%
+%% Limitations:
+%%  The xinclude functionality provided here does not conform to the
+%%  standard in that many options provided for in the standard are ignored.
+%% Author: Tony Wallace
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Modification:
+%%  Copy inscope namespaces to first element after a &quot;file&quot; element.
+%%  This is a consequence of the way XSLT 1.0 handles namespaces, and the requirement
+%%  to split this output into several files.
+%% Author: Tony Wallace
+%% Date: 10 June 2015
+%% ****************************************************
+
+
+-export([main/1,doevent/2,file/1]).
+-export([test/0,test1/0,test2/0,test3/0,test4/0,test5/0,test6/0,test7/0,test8/0,test9/0,test10/0]).
+-include (&quot;erlsom_sax.hrl&quot;).
+-record(startElement, {url,tag,prefix,attrlist}).
+-record(endElement,{url,tag,prefix}).
+
+
+%% debugging is provided if the debug_flag is compiled in.
+%% from command line use: erlc -Ddebug_flag xslt_extn
+%% in the erlang shell use: c(xslt_extn, {d,debug_flag}).
+-ifdef(debug_flag).
+-define (DEBUG(X), 
+	 io:format(standard_error,
+		   &quot;&lt;DEBUG module=\&quot;~p\&quot;~n line=\&quot;~p\&quot;~n timestamp=\&quot;~p\&quot;&gt;~n&lt;![CDATA[~p]]&gt;&lt;/DEBUG&gt;~n&quot;,
+		   [?MODULE,?LINE,notime,X])).
+-define (DEBUGSTR(X), 
+	 io:format(standard_error,
+		   &quot;&lt;DEBUG module=\&quot;~p\&quot;~n line=\&quot;~p\&quot;~n timestamp=\&quot;~p\&quot;&gt;~n&lt;![CDATA[~s]]&gt;&lt;/DEBUG&gt;~n&quot;,
+		   [?MODULE,?LINE,notime,X])).
+
+-define (DEBUG2(Msg,X), 
+	 io:format(standard_error,
+		   &quot;~s = ~p~n&quot;,
+		   [Msg,X])).
+
+-else.
+-define (DEBUG(X), void).
+-define (DEBUGSTR(X), void).
+-define (DEBUG2(Msg,X), void).
+-endif.
+-define (PRESERVE_WHITESPACE_DEFAULT,true).
+-define (FINAL_OUTPUT_DEFAULT,false).
+-define (DATA_DIR,site_data).
+default_state() -&gt;
+       #{default_output =&gt; standard_io,
+   	output =&gt; standard_io, 
+	fileinclusions =&gt; ordsets:new(),
+	tests =&gt; [],
+	escape_to_xml =&gt; false,
+	final_output =&gt; ?FINAL_OUTPUT_DEFAULT,
+	preserve_whitespace =&gt; ?PRESERVE_WHITESPACE_DEFAULT,
+	element_stack =&gt; [],
+	output_namespaces =&gt; false,
+	names_in_scope =&gt; []}.    
+
+main(InputParameters) -&gt; 
+    ?DEBUG(InputParameters),
+    State0 = default_state(),
+    State1 = lists:foldl(fun do_param/2,State0,InputParameters),
+    %% discard output until first output file statement
+    {ok,TestList} = maps:find(tests,State1),
+    case TestList == [] of
+	true -&gt;
+	    file:set_cwd(?DATA_DIR),
+	    Str=lists:flatten(read_stdin()),
+	    parseStr(Str,State1);
+	false -&gt;
+	    ?DEBUG(TestList),
+	    [do_test(T) || T &lt;- TestList]
+    end.
+
+file([Filename]) -&gt;
+    file([Filename,[]]);
+file([Filename,InputParameters]) -&gt;
+    %% Purpose: to parse input from a file instead of stdin for testing purposes in erlang shell
+    Dirname = filename:dirname(Filename),
+    SavedDirName = filename:absname(&quot;.&quot;),
+    State0 = default_state(),
+    State1 = lists:foldl(fun do_param/2,State0,InputParameters),
+    {ok,Str} = file:read_file(Filename),
+    ok=file:set_cwd(Dirname), 
+    parseStr(Str,State1),
+    ok=file:set_cwd(SavedDirName).
+
+do_param(&quot;+finaloutput&quot;,Si) -&gt;
+    Si#{final_output =&gt; true};
+do_param(&quot;-finaloutput&quot;,Si) -&gt;
+    Si#{final_output =&gt; false};
+do_param(&quot;+preserve_whitespace&quot;,Si) -&gt;
+    Si#{preserve_whitespace =&gt; true};
+do_param(&quot;-preserve_whitespace&quot;,Si) -&gt;
+    Si#{preserve_whitespace =&gt; false};
+do_param(T=[$t,$e,$s,$t|_],Si) -&gt;
+    %% run tests...
+    ?DEBUGSTR(&quot;Adding test to test list&quot;),
+    ?DEBUG(T),
+    {ok,OT} = maps:find(tests,Si),
+    Si#{tests =&gt; [T|OT]};
+do_param(Z,_) -&gt;
+    throw(&quot;Unknown option &quot;++Z).
+
+
+read_stdin() -&gt;
+    lists:flatten(read_stdin(io:get_chars(standard_io,&quot;&quot;,8192))).
+read_stdin(eof) -&gt;
+    [];
+read_stdin(Data) -&gt;
+    [Data|read_stdin(io:get_chars(standard_io,&quot;&quot;,8192))].
+
+parseStr(Str,State) -&gt;
+    State2=State#{skip_end_tag =&gt; false, prefix_next_tag=&gt; [] },
+    erlsom:parse_sax(Str,State2,fun doevent/2).
+
+doevent(Event,State) -&gt;
+    ?DEBUG(Event),
+    {ok,OldFD} = maps:find(output,State),
+    %% manage element stack
+    {ok,ES} = maps:find(element_stack,State),
+    {S1,ParentNS,ParentTag,_Ancestors} = 
+	case ES of 
+	    [] -&gt; 
+		case Event of
+		    {startElement,_,_,_,_} -&gt;
+			{State#{element_stack =&gt; [Event | ES]},&quot;&quot;,&quot;&quot;,[]};
+		    {endElement,_,_,_,_} -&gt;
+			throw(&quot;Closing tag without an opening tag&quot;);
+		    _ -&gt; 
+			io:format(standard_error,&quot;No change to element stack which is empty~n&quot;,[]),
+			{State,&quot;&quot;,&quot;&quot;,[]}
+		end;
+	    [{startElement,ParentNS1,ParentTag1,_,_}|Ancestors1] -&gt;
+		case Event of
+		    {startElement,_,_,_,_} -&gt;
+			io:format(standard_error,&quot;Push start element onto stack~n&quot;,[]),
+			{State#{element_stack =&gt; [Event | ES]},ParentNS1,ParentTag1,Ancestors1};
+		    {endElement,NS,Tag,_,_} -&gt;
+			case ParentNS1 =:= NS of
+			    true -&gt; ok;
+			    false -&gt; 
+				throw(&quot;end element namespace does not start element&quot;)
+			end,
+			case Tag =:= ParentTag1 of
+			    true -&gt; ok;
+			    false -&gt;
+				throw(&quot;end element tag does not match start element&quot;)
+			end,
+			{State#{element_stack =&gt; Ancestors1},ParentNS1,ParentTag1,Ancestors1};
+		    A -&gt;
+			io:format(standard_error,&quot;No change to element stack option2 ~n~p~n&quot;,[A]),
+			{State,ParentNS1,ParentTag1,Ancestors1}
+		end
+	end,
+    ?DEBUG2(&quot;S1&quot;,S1),
+    R = case Event of
+	{startElement,&quot;abc&quot;,&quot;file&quot;,_,AttrList} -&gt;
+	    Filename = attrvalue(&quot;filename&quot;,AttrList),
+	    S1#{output =&gt; set_output_file(Filename,OldFD), output_namespaces =&gt; true};
+	OT2={startElement,&quot;abc&quot;,&quot;xml_tags&quot;,_,[]} -&gt;
+	    {ok,FinalOutput} = maps:find(final_output,State),
+	    case FinalOutput of
+		true -&gt;
+		    S1#{escape_to_xml =&gt; true};
+	        false -&gt;
+		    {ok,NSDecl2}=maps:find(prefix_next_tag,State),
+		    write_open_tag(OT2,OldFD,NSDecl2),
+		    S1
+	    end;
+	{startElement,
+	 &quot;http://www.w3.org/2001/XInclude&quot;,&quot;include&quot;,_,AttrList} -&gt;
+	    ?DEBUGSTR(&quot;xinclude start tag found&quot;),
+	    Filename = attrvalue(&quot;href&quot;,AttrList),
+	    Parse = attrvalue(&quot;parse&quot;,AttrList,&quot;xml&quot;),
+	    case Parse of
+		[] -&gt;
+		    insert_file_xml(Filename,S1);
+		&quot;xml&quot; -&gt;
+		    insert_file_xml(Filename,S1);
+		&quot;text&quot; -&gt;
+		    insert_file_text(Filename,OldFD)
+	    end,
+	    S1;
+	OT=#startElement{} -&gt;
+	    ?DEBUGSTR(&quot;other start tag found&quot;),
+	    {ok,NSDecl} = case maps:find(output_namespaces,State) of
+		{ok,true} -&gt;
+		    maps:find(names_in_scope,State);
+		{ok,false} -&gt;
+		    maps:find(prefix_next_tag,State)
+	    end,
+	    write_open_tag(OT,OldFD,NSDecl),
+	    S1#{prefix_next_tag =&gt; &quot;&quot;,output_namespaces =&gt; false};
+	{endElement,&quot;http://www.w3.org/2001/XInclude&quot;,&quot;include&quot;,_} -&gt;
+	    S1;
+	CT2={endElement,&quot;abc&quot;,&quot;xml_tags&quot;,_} -&gt;
+	    {ok,FinalOutput} = maps:find(final_output,State),
+	    case FinalOutput of
+		true -&gt; 
+		    ok; 
+		false -&gt;
+		    write_close_tag(CT2,OldFD)
+	    end,
+	    S1#{escape_to_xml =&gt; false};
+	{endElement,&quot;abc&quot;,&quot;file&quot;,_} -&gt;
+	    {ok,DefaultOutput} = maps:find(default_output,State),
+	    State#{output =&gt; set_output_file(DefaultOutput,OldFD)};
+	CT = #endElement{} -&gt;
+	    {ok,ET} = maps:find(skip_end_tag,State),
+	    case ET of
+		true -&gt; 
+		    S1#{skip_end_tag =&gt; false};
+		false -&gt;
+		    write_close_tag(CT,OldFD),
+		    S1
+	    end;
+	{characters,Characters} -&gt;
+	    {ok,Esc} = maps:find(escape_to_xml,State),
+	    {ok,FinalOutput} = maps:find(final_output,State),
+	    OutputChars =
+	       case Esc and FinalOutput of
+		   true -&gt;
+		       reverse_escaping(Characters);
+		   false -&gt;
+		       xml_output_escaping(Characters)
+	       end,
+	    write_characters(OutputChars,OldFD),
+	    S1;
+	{processingInstruction,Type,Value} -&gt;
+	    io:fwrite(OldFD,&quot;~s&quot;,[&quot;&lt;?&quot;++Type++Value++&quot;?&gt;&quot;]),
+	    S1;
+	{startPrefixMapping,Prefix,Url} -&gt;
+	    {ok,PrefixNextTag} = maps:find(prefix_next_tag,State),
+	    {ok,OldNamesInScope} = maps:find(names_in_scope,State),
+	    S1#{
+	      prefix_next_tag =&gt; [{Prefix,Url}|PrefixNextTag], 
+	      names_in_scope =&gt; 
+		  lists:keystore(Prefix,1,OldNamesInScope,{Prefix,Url})};
+	{ignorableWhitespace,String} -&gt;
+	    %% ignore whitespace after a xml_tags tag
+	    {ok,P} = maps:find(preserve_whitespace,State),
+	    PreserveWhitespace = 
+		    P and not
+		       ((ParentTag ==&quot;file&quot;) and (ParentNS==&quot;abc&quot;)),
+	    case PreserveWhitespace of
+		true -&gt;
+		    write_characters(String,OldFD);
+		false -&gt; 
+		    ok
+	    end,
+	    S1;
+	_ -&gt; S1
+    end,
+    ?DEBUG(R),
+    io:format(standard_error,&quot;~n&quot;,[]),
+    R.
+    
+attrvalue(AttName,AttrList) -&gt;
+    attrvalue(AttName,AttrList,throw).
+
+attrvalue(AttName,[],throw) -&gt;
+    throw(&quot;Attribute &quot;++AttName++&quot; not found&quot;);
+attrvalue(_,[],Default) -&gt;
+    Default;
+attrvalue(AttName,[#attribute{localName=AttName,value=Value}|_],_) -&gt;
+    Value;
+attrvalue(AttName,[_|T],Default) -&gt;
+    attrvalue(AttName,T,Default).
+
+-spec set_output_file(string()) -&gt; integer().
+set_output_file(FileName) -&gt;
+    ?DEBUGSTR(&quot;setting output directory to&quot;),
+    ?DEBUG(FileName),
+    ?DEBUGSTR(&quot;current directory is&quot;),
+    ?DEBUG(filename:absname(&quot;.&quot;)),
+
+    {ok,F}=file:open(FileName,[write]),
+    F.
+
+set_output_file(FileName,standard_io) -&gt;
+    set_output_file(FileName);
+
+set_output_file(FileName,OldFd) -&gt;
+    ok=file:close(OldFd),
+    {ok,F} = file:open(FileName,[write]),
+    F.
+
+insert_file_xml(Filename,State) -&gt;
+    {ok,I} = maps:find(fileinclusions,State),
+    State2 = case ordsets:is_element(Filename,I) of
+	true -&gt;
+	    throw(&quot;recursive xinclude on file &quot;++Filename);
+	false -&gt;
+	    State#{fileinclusions =&gt; ordsets:add_element(Filename,I)}
+    end,
+    Str =
+	case file:read_file(Filename) of
+	    {ok,Str2} -&gt; Str2;
+	    {X,Y} -&gt; 
+		io:format(standard_error,&quot;Could not read file ~s~n&quot;,[Filename]),
+		throw({X,Y})
+	end,
+    erlsom:parse_sax(Str,State2,fun doevent/2).
+    
+-spec insert_file_text(string(), integer()) -&gt; ok.
+insert_file_text(Filename,FD) -&gt; 
+    Str1 =
+	case file:read_file(Filename) of
+	    {ok,Str} -&gt; Str;
+	    {error,enoent} -&gt;
+		throw (lists:flatten(io_lib:format(&quot;missing file ~s&quot;,[Filename])))
+	end,
+    Str2 = xml_output_escaping(binary_to_list(Str1)),
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&lt;pre&gt;&quot;]),
+    io:fwrite(FD,&quot;~s&quot;,[Str2]),
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&lt;/pre&gt;&quot;]).
+
+xml_parameter_formatting(X) -&gt;
+    xml_output_escaping(lists:flatten(io_lib:write(X))).
+
+xml_output_escaping(S) -&gt;
+    [case X of 
+	$&lt; -&gt; &quot;&amp;lt;&quot;; 
+	$&quot; -&gt; &quot;&amp;quot;&quot;; 
+	$&gt; -&gt; &quot;&amp;gt;&quot;; 
+	$&apos; -&gt; &quot;&amp;apos;&quot;; 
+	$&amp; -&gt; &quot;&amp;amp;&quot;; 
+	_ -&gt; X 
+    end 
+    || X &lt;- S ].
+
+reverse_escaping(S) -&gt;
+    reverse_escaping(S,[]).
+
+reverse_escaping([$&amp;|T],Q) -&gt;
+    reverse_escape(T,[$&amp;],Q);
+reverse_escaping([H|T],Q) -&gt;
+    reverse_escaping(T,[H|Q]);
+reverse_escaping([],Q) -&gt;
+    lists:reverse(Q).
+
+reverse_escape(S,&quot;&amp;lt;&quot;,Q) -&gt;
+    reverse_escaping(S,[$&lt;|Q]);
+reverse_escape(S,&quot;&amp;quot;&quot;,Q) -&gt;
+    reverse_escaping(S,[$&quot;|Q]);
+reverse_escape(S,&quot;&amp;gt;&quot;,Q) -&gt;
+    reverse_escaping(S,[$&gt;|Q]);
+reverse_escape(S,&quot;&amp;apos;&quot;,Q) -&gt;
+    reverse_escaping(S,[$&apos;|Q]);
+reverse_escape(S,&quot;&amp;amp;&quot;,Q) -&gt;
+    reverse_escaping(S,[$&amp;|Q]);
+reverse_escape([X|S],A,Q) when length(A) &lt; 6 -&gt;
+    reverse_escape(S,A++[X],Q);
+reverse_escape(_,Seq,_) -&gt;
+    throw(&quot;Invalid escape sequence &quot;++Seq).
+
+write_open_tag({startElement,_,Tag,&quot;&quot;,AttrList},FD,NSDecl) -&gt;
+    ?DEBUGSTR(&quot;write_open_tag rule1&quot;),
+    ?DEBUG(NSDecl),
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&lt;&quot;++Tag++&quot; &quot;]), 
+    ok=write_name_decl(NSDecl,FD),
+    write_attributes(AttrList,FD),
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&gt;&quot;]);
+
+write_open_tag({startElement,_,Tag,Prefix,AttrList},FD,NSDecl) -&gt;
+    ?DEBUGSTR(&quot;write_open_tag rule2&quot;),
+    io:format(standard_error,&quot;write_open_tag ~n  Prefix=~s~n  Tag=~s~n  Attributes=~p~n  Namespaces=~p~n&quot;,[Prefix,Tag,AttrList,NSDecl]),
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&lt;&quot;++Prefix++&quot;:&quot;++Tag++&quot; &quot;]), 
+    ok=write_name_decl(NSDecl,FD),
+    write_attributes(AttrList,FD),
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&gt;&quot;]).
+
+write_close_tag({endElement,_,LocalName,&quot;&quot;}, FD)-&gt;
+   io:fwrite(FD,&quot;~s&quot;,[&quot;&lt;/&quot;++LocalName++&quot;&gt;&quot;]);
+
+write_close_tag({endElement,_,LocalName,Prefix},FD) -&gt;
+    io:fwrite(FD,&quot;~s&quot;,[&quot;&lt;/&quot;++Prefix++&quot;:&quot;++LocalName++&quot;&gt;&quot;]).
+
+write_name_decl([],_) -&gt;
+    ok;
+write_name_decl([{&quot;&quot;,Url}|T],FD) -&gt; 
+    NS = &quot; xmlns=\&quot;&quot;++Url++&quot;\&quot;&quot;,
+    io:format(standard_error,&quot;write_name_decl (no prefix) url=~s~n&quot;,[Url]),
+    io:fwrite(FD,&quot;~s&quot;,[NS]),
+    write_name_decl(T,FD);
+    
+write_name_decl([{Prefix,Url}|T],FD) -&gt;
+    NS = &quot; xmlns:&quot;++Prefix++&quot;=\&quot;&quot;++Url++&quot;\&quot;&quot;,
+    ?DEBUG(NS),
+    io:format(standard_error,&quot;write_name_decl prefix=~s url=~s~n&quot;,[Prefix,Url]),
+    io:fwrite(FD,&quot;~s&quot;,[NS]),
+    write_name_decl(T,FD).
+
+write_attributes([],_) -&gt;  ok;
+write_attributes([{attribute,LocalName,_Uri,Prefix,Value}|T],FD) -&gt;
+    io:fwrite(FD,&quot;~s&quot;,[&quot; &quot;++Prefix++LocalName++&quot;=\&quot;&quot;++Value++&quot;\&quot;&quot;]),
+    write_attributes(T,FD).
+
+write_characters(String,FD) -&gt;
+    io:fwrite(FD,&quot;~s&quot;,[String]).
+
+
+do_test(&quot;test&quot;) -&gt;
+    test();
+do_test(&quot;test1&quot;) -&gt;
+    test1();
+do_test(&quot;test2&quot;) -&gt;
+    test2();
+do_test(&quot;test3&quot;) -&gt;
+    test3();
+do_test(&quot;test4&quot;) -&gt;
+    test4();
+do_test(&quot;test5&quot;) -&gt;
+    test5();
+do_test(&quot;test6&quot;) -&gt;
+    test6();
+do_test(&quot;test7&quot;) -&gt;
+    test7();
+do_test(&quot;test8&quot;) -&gt;
+    test8();
+do_test(&quot;test9&quot;) -&gt;
+    test9();
+do_test(&quot;test10&quot;) -&gt;
+    test10();
+do_test(X) -&gt;
+    throw(&quot;unknown test &quot;++X).
+
+test() -&gt;
+    io:format(&quot;testing started, current directory is ~n~s~n&quot;,[filename:absname(&quot;.&quot;)]),
+    test1(),
+    test2(),
+    test3(),
+    test4(),
+    test5(),
+    test6(),
+    test7(),
+    test8(),
+    test9(),
+    test10(),
+    ok.
+
+test1() -&gt;
+    Testid = &quot;test1&quot;,
+    InputFile = &quot;test/input/test1.xml&quot;,
+    OutputFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.xml&quot;,
+    ErrorFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.err.txt&quot;,
+    Options = &quot;&quot;,
+    io:format(standard_error,&quot;~s~n&quot;,[Testid]),
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++ Options ++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    ok.
+
+test2() -&gt;
+    Testid = &quot;test2&quot;,
+    InputFile = &quot;test/input/testinclusion.xml&quot;,
+    OutputFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.xml&quot;,
+    ErrorFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.err.txt&quot;,
+    Options = &quot;&quot;,
+    io:format(standard_error,&quot;~s~n&quot;,[Testid]),
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++ Options ++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    ok.
+    
+test3() -&gt;
+    Testid = &quot;test3&quot;,
+    InputFile = &quot;test/input/testinclusion2.xml&quot;,
+    OutputFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.xml&quot;,
+    ErrorFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.err.txt&quot;,
+    Options = &quot;&quot;,
+    io:format(standard_error,&quot;~s~n&quot;,[Testid]),
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++ Options ++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    ok.
+    
+test4() -&gt;
+    Testid = &quot;test4&quot;,
+    InputFile = &quot;test/input/testinclusion3.xml&quot;,
+    OutputFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.xml&quot;,
+    ErrorFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.err.txt&quot;,
+    Options = &quot;&quot;,
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++ Options ++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    ok.
+    
+test5() -&gt;
+    io:format(&quot;test5~n&quot;),
+    InputFile = &quot;test/input/test_file_output.xml&quot;,
+    OutputFile = &quot;test/output/test5.xml&quot;,
+    ErrorFile = &quot;test/output/test5.err.txt&quot;,
+    Options = &quot;+finaloutput&quot;,
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++ Options ++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    ok.
+
+test6() -&gt;
+    Testid = &quot;test6&quot;,
+    OutputFile = filename:join([&quot;test/output&quot;,Testid])++&quot;.xml&quot;,
+    io:format(standard_error,&quot;~s~n&quot;,[Testid]),
+    Fd = set_output_file(OutputFile),
+    {ok,Str} = file:read_file(&quot;test/input/test_namespaces.xml&quot;),
+    S0 = default_state(),
+    parseStr(Str,S0#{output =&gt; Fd}),
+    ok.
+
+test7() -&gt;    
+    Testid = &quot;test7&quot;,
+    io:format(standard_error,&quot;~s~n&quot;,[Testid]),
+    %% Test recursive xml include
+    InputFile = &quot;test/input/recursive_include_xml.xml&quot;,
+    OutputFile = &quot;test/output/test7.xml&quot;,
+    ErrorFile = &quot;test/output/test7.err.txt&quot;,
+    Options = &quot;&quot;,
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++ Options ++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    os:cmd(Cmd).
+
+test8() -&gt;
+    %% test reverse escaping
+    &quot;&lt;tag&gt;&quot; = reverse_escaping(&quot;&amp;lt;tag&amp;gt;&quot;),
+    &quot;a&lt;tag&gt;b&quot; = reverse_escaping(&quot;a&amp;lt;tag&amp;gt;b&quot;),
+    &quot;\&quot;hi\&apos;&quot; = reverse_escaping(&quot;&amp;quot;hi&amp;apos;&quot;),
+    &quot;&amp;&quot; = reverse_escaping(&quot;&amp;amp;&quot;),
+    ok.
+
+test9() -&gt;
+    %% test xml_tags  +finaloutput (default)
+    %% expect validly formed xml output
+    %% expect tags in escaped format
+    %% test reverse escaping in final output
+    InputFile = &quot;test/input/xml_tags_tag.xml&quot;,
+    OutputFile = &quot;test/output/test9.xml&quot;,
+    ErrorFile = &quot;test/output/error9.txt&quot;,
+    Options = &quot;+finaloutput&quot;,
+    %% test relative directories okay
+    true = filelib:is_dir(&quot;test/input&quot;),
+    true = filelib:is_dir(&quot;test/output&quot;),
+    %% generate test data
+    Data = [&quot;&lt;root xmlns:q=\&quot;abc\&quot;&gt;&quot;,
+	     &quot;&lt;q:xml_tags&gt;&amp;lt;tag/&amp;gt;&lt;/q:xml_tags&gt;&quot;,
+	     &quot;&lt;/root&gt;&quot;],
+    file:write_file(InputFile,
+		    Data),
+    %% run test
+    ?DEBUGSTR(&quot;Test9 running test&quot;),
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++Options++&quot; &lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    %% check result
+
+    case filelib:is_regular(OutputFile) of
+	true -&gt;
+	    {ok,R} = file:read_file(OutputFile),
+	    io:format(&quot;~s~n&quot;,[R]);
+	false -&gt;
+	    throw(&quot;test 9 did not generate an output file&quot;)
+    end.
+
+test10() -&gt;
+    %% test xml_tags not final output (default)
+    %% expect validly formed xml output
+    %% expect tags in escaped format
+    InputFile = &quot;test/input/xml_tags_tag.xml&quot;,
+    OutputFile = &quot;test/output/test10.xml&quot;,
+    ErrorFile = &quot;test/output/error10.txt&quot;,
+    Options = &quot;&quot;,
+    %% test relative directories okay
+    true = filelib:is_dir(&quot;test/input&quot;),
+    true = filelib:is_dir(&quot;test/output&quot;),
+    %% generate test data
+    Data = [&quot;&lt;root xmlns:q=\&quot;abc\&quot;&gt;&quot;,
+	     &quot;&lt;q:xml_tags&gt;&amp;lt;tag/&amp;gt;&lt;/q:xml_tags&gt;&quot;,
+	     &quot;&lt;/root&gt;&quot;],
+    file:write_file(InputFile,
+		    Data),
+    %% run test
+    ?DEBUGSTR(&quot;Test10 running test&quot;),
+    Cmd = &quot;escript ebin/xslt_extn.beam &quot;++Options++&quot;&lt; &quot; 
+	++ InputFile ++ &quot; &gt; &quot; ++ OutputFile
+	++ &quot; 2&gt; &quot; ++ ErrorFile,
+    ?DEBUG(Cmd),
+    os:cmd(Cmd),
+    %% check result
+
+    case filelib:is_regular(OutputFile) of
+	true -&gt;
+	    {ok,R} = file:read_file(OutputFile),
+	    io:format(&quot;~s~n&quot;,[R]);
+	false -&gt;
+	    throw(&quot;test 10 did not generate an output file&quot;)
+    end.
+    
+</pre>
+</xhtml:pre><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">A build script to put it all together</xhtml:h2><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+cd site_data
+escript ../ebin/xslt_extn.beam &lt; pagedata.xml &gt; fullsite.xml 2&gt; errors.txt
+xsltproc ../src/make_web2.xsl fullsite.xml &gt; allpages.xml
+escript ../ebin/xslt_extn.beam +finaloutput &lt; allpages.xml 
+mv *.html ../html
+
+</xhtml:pre><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The first call to xslt_extn includes all the page
+definitions in pagedata.xml creating the file fillsite.xml.
+This data is then put through xslt processing to form a
+new file allpages.xml.  This file has all the webpages
+properly laid out, but all in a single file.  xslt_extn
+is called again to split these files and output the
+processing instructions into the web pages.  Finally
+these html web pages are copied to the websites html directory.
+</xhtml:p></xhtml:section></xhtml:body></xhtml:html>

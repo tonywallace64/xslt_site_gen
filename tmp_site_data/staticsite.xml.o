@@ -1,0 +1,71 @@
+<page  xmlns:ax="abc" xmlns:xi="http://www.w3.org/2001/XInclude">
+<name >static site</name>
+<title >static site</title>
+<url >static.html</url>
+<keywords >xml</keywords>
+<pageheader >Greenrose</pageheader>
+<content>
+<h2 >Why  build a site this way?</h2>
+<p >In this lesson we will build a site with static content
+using the tools we have learnt thus far.  Why do it this way?
+A website can be viewed as an organised collection of pages.</p><p >Editing pages on an adhoc basis can lead to inconsistency
+between pages.  This is partially overcome using shared css 
+stylesheets, however this does not model the relationship 
+between the pages.  Xml can model the relationship between
+the web pages, be they nested or disjoint sets.</p>
+<h2 >This site master file</h2>
+<pre ><xi:include  parse="text" href="pagedata.xml"></xi:include></pre>
+<h2>This page definition</h2>
+
+<p>This is the definition for this page.  Everything about this
+page, its name, its url and all other things required for its
+generation are stored here...</p>
+<code><xi:include href="staticsite.xml" parse="text"/></code>
+
+<h2 >An XSLT utility file</h2>
+<p>
+This is one of two files for converting this site data into html.
+</p>
+<pre ><xi:include  parse="text" href="ajw_utils.xsl"></xi:include></pre><h2 >XSLT file to generate HTML</h2>
+<p>
+This file generates each web page including navigation bar.
+</p>
+<xi:include  href="make_web.xsl" parse="text"></xi:include>
+<h2>Extra functionality from a SAX parser</h2>
+<p>During construction it was found that the xmllint
+xinclude did not work properly with the parse="text" attribute.
+It was also required to find a way to split up the site into
+separate html pages and to store and save into these pages
+processing instructions.</p>
+<p>These functions were built using the erlsom SAX parser
+and custom erlang programming.  The disadvantage of going
+to SAX and erlang compared to using XSLT is obvious, the
+program is much longer. However the advantage is that
+using a general purpose language like erlang allows complete
+flexibility.</p>  
+<p>Finally, there is a significant amount of code dedicated
+to self testing.</p>
+<p>This code is shown here.</p>
+<code>
+<xi:include href="../src/xslt_extn.erl" parse="text" />
+</code>
+<h2 >A build script to put it all together</h2>
+<pre >
+<![CDATA[
+cd site_data
+escript ../ebin/xslt_extn.beam < pagedata.xml > fullsite.xml 2> errors.txt
+xsltproc ../src/make_web2.xsl fullsite.xml > allpages.xml
+escript ../ebin/xslt_extn.beam +finaloutput < allpages.xml 
+mv *.html ../html
+]]>
+</pre>
+<p>The first call to xslt_extn includes all the page
+definitions in pagedata.xml creating the file fillsite.xml.
+This data is then put through xslt processing to form a
+new file allpages.xml.  This file has all the webpages
+properly laid out, but all in a single file.  xslt_extn
+is called again to split these files and output the
+processing instructions into the web pages.  Finally
+these html web pages are copied to the websites html directory.
+</p>
+</content></page>

@@ -1,0 +1,58 @@
+<page xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ax="abc">
+  <name>Add_Website</name>
+  <title>Add_Website</title>
+  <url>addwebsite.xhtml</url>
+  <keywords>xml</keywords>
+  <pageheader>Greenrose</pageheader>
+<ax:content xmlns:xh="http://www.w3.org/1999/xhtml">
+<p>
+ERRATA: Site rules need to be compiled and put into ebin directory
+as part of build procedure.  This is not currently part of make rules
+</p>
+
+<h1>Add Website</h1>
+<p>All code in this section is written in Erlang.  The webserver is cowboy.
+This page is not intended as a tutorial for either of these, rather
+it is intended to explain how to update the Cowboy webserver as used here.</p>
+<p>Edit the src/start.erl program and add the url along with the name of the
+configuration program.  The current start.erl is shown here for instruction.
+</p>
+<xi:include href="../deps/website_support/src/start.erl" parse="text"/>
+<p>
+The configuration programs are stored siteconf directory.  The purposes
+of the siteconf programs are twofold:</p>
+<ul>
+  <li>To separate each site's configuration into a single file pertaining to that site for better code modularity,</li>
+  <li>To define handlers mapping URL's to handlers for that type of resource.</li>
+</ul>
+<p>The handler for this site (which is currently static files only) is shown below.</p>
+<xi:include href="../deps/website_support/siteconf/tonygenconfig.erl" parse="text" />
+<p>The data files need to be copied into the resource directory which is clients/&lt;site_identifier&gt;/webroot/  If this directory does not exist for your site it needs to be made.  The site_identifier must match the path in the site configuration file.  In this case &quot;tonygen&quot;</p>
+<p>Now the site needs to be compiled and tested.  Compiling is done by running the command erl -make.</p>
+<p>Start the website by running erl and then executing start:go in the development web server's source directory.  If everything is right it should start okay.</p>
+<p>Next put an entry into the hosts file "/etc/hosts" to point back to the localhost.  What is done here is to make this a test host as in test.tony.gen.nz 127.0.0.1.  The easiest way to do this is to copy the /etc/hosts to the local directory, edit it there, and copy it back.</p>
+<p>Now the website should show in the test webserver</p>
+<h2>Deployment</h2>
+<p>The test site has been tested, not the task is to go live.  For a new
+website the DNS A record must be changed so that the site can be accessed
+by the public.  This is done through your Domain Name supplier's website.</p>
+<p>Next an erlang runtime build needs to be generated and deployed.</p>
+<p>Building is done with relx by Ninenines.</p>
+<p>From here my knowledge gets a bit thin, I will update this section
+as I learn more about using tar.gz to install a update.  This will
+be necessary when updating the production server.</p>
+<p>Prepare server by assigning static-ip in /etc/network/interfaces.
+Disable lid switch in /etc/systemd/logind if installing on laptop.</p>
+
+<h2>Including Static Pages Into the Build</h2>
+The build process outlined above relies on <em>make</em>.  The process is as follows:
+<ol>
+  <li>Build the static site</li>
+  <li>Copy the pages to the client directory of the website support directory</li>
+  <li>Update the release version.  This is in relx.config.  There is some way of using overlays to do this in relx, but I don't know how to do it yet.</li>
+  <li>Make the release directory structure by running "make" in the support directory</li>
+  <li>Copy the static pages into release directory by running "make static-pages in the support directory</li>
+  <li>Make a release by compressing release directory. The release directory is the subdirectory containing the "lib" directory.</li>
+</ol>
+</ax:content>
+</page>

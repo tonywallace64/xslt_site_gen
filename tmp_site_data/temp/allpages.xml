@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+<!--Generated web pages-->
+<site_pages xmlns:ax="abc" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    index.xhtml
+    mesh
+    Phone: 027 2203796
+    Email: tony@tony.gen.nz
+    
+    <ax:file filename="index.xhtml">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Main</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Main</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/><h1 xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Tony's Main Page</h1><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">This website is currently documenting procedures
+for making itself and keeping itself updated.  At
+the moment this is limited to static sites but as
+extra facilities are added these too will be documented
+here. </p><ol xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+<li><a href="intro.xhtml">Generating a wesite with XSLT</a></li>
+<li><a href="addwebsite.xhtml">Admin guide</a></li>
+</ol></xhtml:section></xhtml:body></xhtml:html></ax:file>
+  
+    index.xhtml
+    mesh
+    Phone: 027 2203796
+    Email: tony@tony.gen.nz
+    
+    <ax:file filename="intro.xhtml">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>XML Sojourner's Journey</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">This is the introduction page to my xml diary.  It is not
+a diary in the sense of a chronology.  It is not a book in
+that it will never be complete.  It is not a blog as I ask
+no feedback, look for none and expect none.</xh:p><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Rather it documents my journeys in XML land.  One of
+the frontiers of the web.  Many have gone before me and
+blazed the trail, but alas it is a confusing place for
+newcommers, and I hope that this work, incomplete (and
+possibly in places inaccurate) may help the sojourners
+who wander this trail after me.</xh:p><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">The question remains as to why would someone choose
+this journey?</xh:p><xh:ul xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+  <xh:li><xh:em>XML is standard.</xh:em> It is a language understood
+throughout the computing world.</xh:li>
+<xh:li><xh:em>XML is expressive.</xh:em> XML naturally expresses complex
+data structures and is useful for a huge number of applications
+from word processors to graphics editiors.</xh:li>
+<xh:li><xh:em>Standard XML tools</xh:em> allow complex analysis of the
+data contained in XML files, and the transformation of XML
+data between formats</xh:li>
+<xh:li><xh:em>Communication.</xh:em> XML is used to communicate data
+between systems for e-commerce.</xh:li>
+<xh:li><xh:em>XRX </xh:em>XML can facilitate the storage of data without
+transforming it to another form as is usual in relation database
+applications.</xh:li>
+</xh:ul><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Yes there is gold in this land, but it comes not easily.
+In my wanderings I have frequently found if I did not
+understand a concept futher progress in a different area
+became impossible, and that there is an order in which
+topics are to be followed, so this journey is a trail
+and the reader is advised to follow the track in order
+to not get lost.</xh:p><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Consequently there is no attempt in this work to deal
+with any of these technologies in a comprehensive manner.
+That work has been done by others.  Rather it is an attempt
+to guide through these technologies in a systematic way.
+</xh:p><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Indeed my journey has been guided by a vision, the same
+vision that prompted Dan Cleary and others with XRX.  To
+move away from the continual construction and deconstruction
+of data structures as usual with application development.
+To utilise the Web as the main interface.  To use standard
+tools  that are free.  To keep related data together rather than normalised
+into separate tables. To build systems that are maintainable,
+scalable, and parallel processor friendly.</xh:p><xh:p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">This quest is far from over, but I gladly share my wanderings.</xh:p></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="whatsxml.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>What is XML</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="xmlproc.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>xml processing</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="namespaces.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Namespaces</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="xpath.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>xpath</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="xslt.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>xslt</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="static.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>static site</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="validation.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Validation</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="splitpages.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Split Pages</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="insert.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Insert Content</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="build.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Building the website</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="futuredev.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content=""/><xhtml:title>Future Developments</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="rest.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="REST"/><xhtml:title>REST Resources</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><xhtml:a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="whatsxml.html">whatsxml</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xmlproc.html">Xml processing</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="namespaces.html">namespaces</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xpath.html">xpath</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="xslt.html">xslt</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="static.html">static site</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="validation.html">Validation</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="splitpages.html">split_pages</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="insert.html">insert_content</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="build.html">build</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="futuredev.html">FutureDev</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="rest.html">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"><xhtml:img xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" width="100%" left="250px" src="images/hw.png"/></xhtml:a><xhtml:br/></xhtml:section></xhtml:body></xhtml:html></ax:file>
+  
+    index.xhtml
+    mesh
+    Phone: 027 2203796
+    Email: tony@tony.gen.nz
+    
+    <ax:file filename="addwebsite.xhtml">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Add_Website</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="addwebsite.xhtml">Add_Website</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="admin_todod.xhtml">Admin_todo</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="admin_troubleshooting.html">Admin_troubleshooting</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"/><xhtml:br/><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+ERRATA: Site rules need to be compiled and put into ebin directory
+as part of build procedure.  This is not currently part of make rules
+</p><h1 xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Add Website</h1><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">All code in this section is written in Erlang.  The webserver is cowboy.
+This page is not intended as a tutorial for either of these, rather
+it is intended to explain how to update the Cowboy webserver as used here.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Edit the src/start.erl program and add the url along with the name of the
+configuration program.  The current start.erl is shown here for instruction.
+</p><pre xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">-module(start).
+-export([main/1,go/0,start/0,stop/0,load/0]).
+%% TODO: go works, start works stop does not.  Why?
+%% {"greenrose.co.nz",greenroseconfig}
+-define(APP,website).
+-define(SUP,website_sup).
+
+main(_) -&gt;
+    go().
+
+load() -&gt;
+    application:load(?APP),
+    application:start(sasl),
+    application:start(crypto),
+    application:start(ranch),
+    application:start(cowlib),
+    application:start(cowboy).
+    %% in the test environment mnesia is memory resident so tables need to be set up
+go() -&gt;
+    load(),
+    start().
+
+start() -&gt;
+    application:start(?APP).
+    %mnesia_procs:do_once().
+stop() -&gt;
+    application:stop(?APP).
+
+
+
+</pre><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+The configuration programs are stored siteconf directory.  The purposes
+of the siteconf programs are twofold:</p><ul xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+  <li>To separate each site's configuration into a single file pertaining to that site for better code modularity,</li>
+  <li>To define handlers mapping URL's to handlers for that type of resource.</li>
+</ul><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">The handler for this site (which is currently static files only) is shown below.</p><pre xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">-module(tonygenconfig).
+
+-export([routing/2]).
+
+routing(SiteName,DataDir) -&gt;
+    ExtSite = lists:append(["[...]",SiteName]),
+    IdxFile = filename:join(DataDir,"tonygen/web_root/index.html"),
+    StaticDir = filename:join(DataDir,"tonygen/web_root"),
+    true = filelib:is_regular(IdxFile),
+    true = filelib:is_dir(StaticDir),
+    {ExtSite,
+	[
+	 {"/", ajw_cowboy_static, {file, IdxFile}},
+	 {"/[...]", ajw_cowboy_static, {dir, StaticDir}}
+	]
+    }.
+</pre><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">The data files need to be copied into the resource directory which is clients/&lt;site_identifier&gt;/webroot/  If this directory does not exist for your site it needs to be made.  The site_identifier must match the path in the site configuration file.  In this case "tonygen"</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Now the site needs to be compiled and tested.  Compiling is done by running the command erl -make.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Start the website by running erl and then executing start:go in the development web server's source directory.  If everything is right it should start okay.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Next put an entry into the hosts file "/etc/hosts" to point back to the localhost.  What is done here is to make this a test host as in test.tony.gen.nz 127.0.0.1.  The easiest way to do this is to copy the /etc/hosts to the local directory, edit it there, and copy it back.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Now the website should show in the test webserver</p><h2 xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Deployment</h2><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">The test site has been tested, not the task is to go live.  For a new
+website the DNS A record must be changed so that the site can be accessed
+by the public.  This is done through your Domain Name supplier's website.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Next an erlang runtime build needs to be generated and deployed.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Building is done with relx by Ninenines.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">From here my knowledge gets a bit thin, I will update this section
+as I learn more about using tar.gz to install a update.  This will
+be necessary when updating the production server.</p><p xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Prepare server by assigning static-ip in /etc/network/interfaces.
+Disable lid switch in /etc/systemd/logind if installing on laptop.</p><h2 xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">Including Static Pages Into the Build</h2><em xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">make</em><ol xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+  <li>Build the static site</li>
+  <li>Copy the pages to the client directory of the website support directory</li>
+  <li>Update the release version.  This is in relx.config.  There is some way of using overlays to do this in relx, but I don't know how to do it yet.</li>
+  <li>Make the release directory structure by running "make" in the support directory</li>
+  <li>Copy the static pages into release directory by running "make static-pages in the support directory</li>
+  <li>Make a release by compressing release directory. The release directory is the subdirectory containing the "lib" directory.</li>
+</ol></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="admin_todod.xhtml">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Admin_todo</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="addwebsite.xhtml">Add_Website</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="admin_todod.xhtml">Admin_todo</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="admin_troubleshooting.html">Admin_troubleshooting</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"/><xhtml:br/><ul xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+<li>Understand sysadmin procedures for erlang applications
+that include mnesia databases.  Incorporate these into these
+web administration pages.</li>
+<li>Download a relx manual from ninenines</li>
+<li>Understand relx overlays</li>
+</ul></xhtml:section></xhtml:body></xhtml:html></ax:file>
+    <ax:file filename="admin_troubleshooting.html">
+<ax:xml_tags>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE html&gt;</ax:xml_tags><xhtml:html><xhtml:head><xhtml:meta name="Keywords" content="xml"/><xhtml:title>Troubleshooting</xhtml:title><xhtml:meta name="viewport" content="width=device-width, initial-scale=1"/><xhtml:style type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body><xhtml:nav><xhtml:h2>Contact</xhtml:h2><xhtml:ul><xhtml:li>Phone: 027 2203796</xhtml:li><xhtml:li><a xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</a></xhtml:li><xhtml:li><xhtml:a href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="addwebsite.xhtml">Add_Website</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="admin_todod.xhtml">Admin_todo</xhtml:a></xhtml:li><xhtml:li><xhtml:a href="admin_troubleshooting.html">Admin_troubleshooting</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section><xhtml:a href="index.xhtml"/><xhtml:br/><ul xmlns:xh="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+<symptom>Built system not working correctly</symptom>
+<possible_cause>Conflict between multiple installed copies</possible_cause>
+<corrective_actions>
+<ol>
+<li>Remove all copies from usr/lib/erlang and usr/local/erlang</li>
+<li>Reinstall with make install from latest version</li>
+</ol>
+</corrective_actions>
+<symptom>Laptop suspends when lid closed (not good when using laptop as server)</symptom>
+<possible_cause>Lid switch not ignored in /etc/systemd/logind.conf</possible_cause>
+<corrective_actions>
+Set entry HandleLidSwitch to ignore in /etc/systemd/logind.conf
+</corrective_actions>
+</ul></xhtml:section></xhtml:body></xhtml:html></ax:file>
+  </site_pages>

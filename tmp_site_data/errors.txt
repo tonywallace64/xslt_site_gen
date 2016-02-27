@@ -1,0 +1,2 @@
+running .erlang in home directory
+.erlang completed

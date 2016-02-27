@@ -1,0 +1,172 @@
+<?xml version="1.0"?><!DOCTYPE html><xhtml:html  xmlns:ax="abc" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml"><xhtml:head ><xhtml:meta  content="xml" name="Keywords"></xhtml:meta><xhtml:title >Building the website</xhtml:title><xhtml:meta  content="width=device-width, initial-scale=1" name="viewport"></xhtml:meta><xhtml:style  type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  pre { color:#800080;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body ><xhtml:nav ><xhtml:h2 >Contact</xhtml:h2><xhtml:ul ><xhtml:li >Phone: 027 2203796</xhtml:li><xhtml:li ><xhtml:a  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="whatsxml.xhtml">whatsxml</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xmlproc.xhtml">Xml processing</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="namespaces.xhtml">namespaces</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xpath.xhtml">xpath</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xslt.xhtml">xslt</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="static.xhtml">static site</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="validation.xhtml">Validation</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="splitpages.xhtml">split_pages</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="insert.xhtml">insert_content</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="build.xhtml">build</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="futuredev.xhtml">FutureDev</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="rest.xhtml">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section ><xhtml:a  href="index.xhtml"><xhtml:img  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" src="images/hw.png" left="250px" width="100%"></xhtml:img></xhtml:a><xhtml:br ></xhtml:br><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+Once the website static pages are generated, there is a need to
+build these pages into a webserver for deployment.  The process
+for this is as follows:
+  </xhtml:p><xhtml:ol  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<xhtml:li >Ensure there is a site directory in website/clients</xhtml:li>
+<xhtml:li >Copy the website data into website/clients/&lt;client&gt;/web_root</xhtml:li>
+<xhtml:li >Ensure there is a handler defined in website/siteconf</xhtml:li>
+<xhtml:li >Build the website</xhtml:li>
+<xhtml:li >Test the build</xhtml:li>
+<xhtml:li >Preparing the webserver</xhtml:li>
+<xhtml:li >Install</xhtml:li>
+</xhtml:ol><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Writing a siteconf</xhtml:h3><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The following is siteconf file for this website.</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+<pre >-module(tonygenconfig).
+
+-export([routing/2]).
+
+routing(SiteName,DataDir) -&gt;
+    ExtSite = lists:append([&quot;[...]&quot;,SiteName]),
+    IdxFile = filename:join(DataDir,&quot;tonygen/web_root/index.html&quot;),
+    StaticDir = filename:join(DataDir,&quot;tonygen/web_root&quot;),
+    true = filelib:is_regular(IdxFile),
+    true = filelib:is_dir(StaticDir),
+    {ExtSite,
+	[
+	 {&quot;/&quot;, ajw_cowboy_static, {file, IdxFile}},
+	 {&quot;/[...]&quot;, ajw_cowboy_static, {dir, StaticDir}}
+	]
+    }.
+</pre>
+</xhtml:pre><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Building a website</xhtml:h3><xhtml:h4  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The initial make</xhtml:h4><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The build is started by executing the command:</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  make
+</xhtml:pre><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+In the website code directory.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">This build process uses relx to make an erlang install set.  Including
+all runtime libraries, compiled for the current architecture.  After this the
+content is then added to the build with the command:</xhtml:p><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  make static-pages
+</xhtml:pre><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The content added by this command includes:</xhtml:p><xhtml:ul  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xhtml:li >Static web pages</xhtml:li>
+  <xhtml:li >Installation utilites</xhtml:li>
+</xhtml:ul><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">At the end of the build process, the release is stored in a directory _rel.</xhtml:p><xhtml:h4  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Contents of the makefile</xhtml:h4><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude"><pre >PROJECT = website
+
+DEPS = cowboy
+dep_cowboy = pkg://cowboy master
+
+include vsn.mk
+VSN = 0.0.1
+
+.PHONY: release clean-release static-pages
+
+release: clean-release all 
+	./relx -o rel/$(PROJECT)
+	static-pages
+
+clean-release: clean-rel
+	rm -rf rel/$(PROJECT)
+
+static-pages:
+	rm -rf $(PROJECT)/$(PROJECT)/lib/*/src
+	cp -r clients rel/$(PROJECT)/$(PROJECT)
+	cp installer/install.sh rel/$(PROJECT)
+	chmod +x rel/$(PROJECT)/install.sh
+	rm -rf rel/$(PROJECT)/installer
+	mkdir rel/$(PROJECT)/installer
+#	mkdir /rel/$(PROJECT)/installer
+	cp installer/website.src rel/$(PROJECT)/installer/website.src
+	cp readme.txt rel/$(PROJECT)
+#	sh mktar.sh $(PROJECT)	
+#	tar -Avz clients installer
+
+include ../erlang.mk
+
+</pre></xhtml:pre><xhtml:h4  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The installer</xhtml:h4><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The installer puts a script into /etc/init.d/ to start the webserver.
+Links to this script are put into the rc&lt;runlevel&gt;.d directories
+so that the webserver is started and stopped automatically.  The webserver
+is run as a non-priveilaged user for security purposes, the username
+for this user being a parameter in the install.  At the time the install
+is made the same information is used to make an uninstall script.</xhtml:p><xhtml:h5  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">install.sh</xhtml:h5><xhtml:pre  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude"><pre ># install embedded erlang application built with relx
+# replaces string %FINAL_ROOT_DIR% with installdir
+# in accordance with Erlang System Manual section
+# Installing a Target System
+# usage: install &lt;application&gt;
+# The tarball has been copied to the directory where it will
+# be installed, and this install script installs it.
+
+APP=$1
+
+if [ &quot;$2&quot; = &quot;&quot; ]; then 
+    echo &quot;Usage install &lt;application&gt; &lt;user&gt;&quot;
+    exit 1
+else
+    USER=$2
+
+#tar -xvz $APP.tar.gz 
+
+    ROOTDIR=$APP
+    FULLPATH=`pwd`/$APP
+    DataFile=$ROOTDIR/releases/start_erl.data
+
+    ERTS_VSN=`awk &apos;{print $1}&apos; $DataFile`
+    VSN=`awk &apos;{print $2}&apos; $DataFile`
+
+    RL1=K75$APP
+    RL2=S75$APP
+    RL3=S75$APP
+    RL4=S75$APP
+    RL5=S75$APP
+    RL6=K75$APP
+
+# make uninstaller
+    echo &apos;sudo /etc/init.d/&apos;$APP stop &gt; uninstall.sh
+    echo &apos;sudo rm /etc/init.d/&apos;$APP &gt;&gt; uninstall.sh
+    echo &apos;sudo rm /etc/rc1.d/&apos;$RL1 &gt;&gt; uninstall.sh
+    echo &apos;sudo rm /etc/rc2.d/&apos;$RL2 &gt;&gt; uninstall.sh
+    echo &apos;sudo rm /etc/rc3.d/&apos;$RL3 &gt;&gt; uninstall.sh
+    echo &apos;sudo rm /etc/rc4.d/&apos;$RL4 &gt;&gt; uninstall.sh
+    echo &apos;sudo rm /etc/rc5.d/&apos;$RL5 &gt;&gt; uninstall.sh
+    echo &apos;sudo rm /etc/rc6.d/&apos;$RL6 &gt;&gt; uninstall.sh
+    echo &apos;sudo rm -rf &apos;$FULLPATH &gt;&gt; uninstall.sh
+
+    BINDIR=$FULLPATH/erts-$ERTS_VSN/bin
+    EMU=beam
+# need to escape full path before substitution
+    ESC_PATH=`(echo $FULLPATH | sed &apos;s/\//\\\\\//g&apos;)`
+    echo &apos;$ESC_PATH =&apos;$ESC_PATH
+
+    DEST=erl;sed &quot;s/%FINAL_ROOTDIR%/$ESC_PATH/&quot;  $BINDIR/$DEST.src &gt; $BINDIR/$DEST
+    DEST=start;sed &quot;s/%FINAL_ROOTDIR%/$ESC_PATH/&quot;  $BINDIR/$DEST.src &gt; $BINDIR/$DEST
+    DEST=start_erl;sed &quot;s/%FINAL_ROOTDIR%/$ESC_PATH/&quot;  $BINDIR/$DEST.src &gt; $BINDIR/$DEST
+    DEST=website;
+       sed &quot;s/%FINAL_ROOTDIR%/$ESC_PATH/&quot;  installer/$DEST.src | 
+       sed &quot;s/%USER%/$USER/&quot; |
+       sed &quot;s/%APP%/$APP/&quot; &gt; installer/$DEST
+
+    chmod +x $APP/bin/$APP*
+    chmod +x $BINDIR/*
+    chmod +x installer/website
+
+    sudo cp installer/website /etc/init.d
+    sudo ln -s /etc/init.d/website /etc/rc1.d/$RL1 
+    sudo ln -s /etc/init.d/website /etc/rc2.d/$RL2 
+    sudo ln -s /etc/init.d/website /etc/rc1.d/$RL3 
+    sudo ln -s /etc/init.d/website /etc/rc2.d/$RL4 
+    sudo ln -s /etc/init.d/website /etc/rc1.d/$RL5 
+    sudo ln -s /etc/init.d/website /etc/rc2.d/$RL6 
+
+    sudo /etc/init.d/$APP start
+
+fi
+</pre> </xhtml:pre><xhtml:h4  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Building for a different system</xhtml:h4><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Running the build in a test environment</xhtml:h3><xhtml:h4  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Testing from a non-graphic build machine</xhtml:h4><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Running the installer</xhtml:h3></xhtml:section></xhtml:body></xhtml:html>

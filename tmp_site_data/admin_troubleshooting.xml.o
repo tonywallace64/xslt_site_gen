@@ -1,0 +1,24 @@
+<page xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:ax="abc">
+  <name>Admin_troubleshooting</name>
+  <title>Troubleshooting</title>
+  <url>admin_troubleshooting.html</url>
+  <keywords>xml</keywords>
+  <pageheader>Greenrose</pageheader>
+<ax:content xmlns:xh="http://www.w3.org/1999/xhtml">
+<ul>
+<symptom>Built system not working correctly</symptom>
+<possible_cause>Conflict between multiple installed copies</possible_cause>
+<corrective_actions>
+<ol>
+<li>Remove all copies from usr/lib/erlang and usr/local/erlang</li>
+<li>Reinstall with make install from latest version</li>
+</ol>
+</corrective_actions>
+<symptom>Laptop suspends when lid closed (not good when using laptop as server)</symptom>
+<possible_cause>Lid switch not ignored in /etc/systemd/logind.conf</possible_cause>
+<corrective_actions>
+Set entry HandleLidSwitch to ignore in /etc/systemd/logind.conf
+</corrective_actions>
+</ul>
+</ax:content>
+</page>

@@ -1,0 +1,54 @@
+<page xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:ax="abc">
+  <name>static site</name>
+  <title>static site</title>
+  <url>static.xhtml</url>
+  <keywords>xml</keywords>
+  <pageheader>Greenrose</pageheader>
+<ax:content xmlns:ax="abc">
+<xhtml:h2>Why  build a site this way?</xhtml:h2>
+<xhtml:p>In this lesson we will build a site with static content
+using the tools we have learnt thus far.  Why do it this way?
+A website can be viewed as an organised collection of pages.</xhtml:p>
+<xhtml:p>Editing pages on an adhoc basis can lead to inconsistency
+between pages.  This is partially overcome using shared css 
+stylesheets, however this does not model the relationship 
+between the pages.  Xml can model the relationship between
+the web pages, be they nested or disjoint sets.</xhtml:p>
+
+
+<xhtml:h2>This site master file</xhtml:h2>
+
+<xhtml:pre>
+<xi:xinclude href="pagedata.xml" parse="text"/>
+</xhtml:pre>
+
+<xhtml:h2>An XSLT utility file</xhtml:h2>
+This is one of two files for converting this site data into html.
+<xhtml:pre>
+<xi:xinclude href="ajw_utils.xsl" parse="text"/>
+</xhtml:pre>
+
+<xhtml:h2>XSLT file to generate HTML</xhtml:h2>
+This file generates each web page including navigation bar.
+<ax:quote_include href="make_web.xsl"/>
+
+<xhtml:h2>An erlang script to split the generated HTML into multiple files</xhtml:h2>
+
+
+<xhtml:h2>A build script to put it all together</xhtml:h2>
+<!-- quote_include only works for xml files so this is manually copied -->
+<xhtml:pre>
+PAGEDATA=pagedata.xml
+xsltproc ajw_utils.xsl staticsite.src.xml &gt; staticsite.xml
+xmllint -xinclude pagedata.xml &gt; tmp1
+xsltproc make_web.xsl tmp1 &gt; tmp2 
+escript splitpages.escript &lt; tmp2
+cp *.html html/ 
+</xhtml:pre>
+
+
+
+
+</ax:content>
+</page>

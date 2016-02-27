@@ -1,0 +1,233 @@
+<site  xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms">
+  <siteurl >www.tony.gen.nz/xml</siteurl>
+  <html_dir >html</html_dir>
+  <resources >
+    <copydir >html</copydir>
+  </resources>
+  <file_headers >&lt;?xml version=&quot;1.0&quot;?&gt;&lt;!DOCTYPE html&gt;</file_headers>
+  <pages >
+    <homepage >index.xhtml</homepage>
+    <navtype >mesh</navtype>
+    <contact-phone >Phone: 027 2203796</contact-phone>
+    <contact-email ><xhtml:a  href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></contact-email>
+    <banner_image ><xhtml:img  width="100%" left="250px" src="images/hw.png"></xhtml:img></banner_image>
+    <page  xmlns:ax="abc" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <name >Main</name>
+  <title >Main</title>
+  <url >index.xhtml</url>
+  <keywords >xml</keywords>
+  <pageheader >Greenrose</pageheader>
+<ax:content  xmlns:xh="http://www.w3.org/1999/xhtml">
+<xhtml:h1 >Tony&apos;s Main Page</xhtml:h1>
+<xhtml:p >This website is currently documenting procedures
+for making itself and keeping itself updated.  At
+the moment this is limited to static sites but as
+extra facilities are added these too will be documented
+here. </xhtml:p>
+<xhtml:ol >
+<xhtml:li ><xhtml:a  href="intro.xhtml">Generating a wesite with XSLT</xhtml:a></xhtml:li>
+<xhtml:li ><xhtml:a  href="publickey.xhtml">Contact me securely</xhtml:a></xhtml:li>
+<xhtml:li ><xhtml:a  href="addwebsite.xhtml">Admin guide</xhtml:a></xhtml:li>
+<xhtml:h3 >Change Log</xhtml:h3>
+<xhtml:h4 >10 June 2015</xhtml:h4>
+<xhtml:ul >
+  <xhtml:li >Set declarations for xhtml</xhtml:li>
+  <xhtml:li >Add xhtml namespace prefixes for all markup elements</xhtml:li>
+</xhtml:ul>
+<xhtml:h4 >11 June 2015</xhtml:h4>
+<xhtml:ul >
+  <xhtml:li >Change code colour for better layout</xhtml:li>
+  <xhtml:li >Put project under source control</xhtml:li>
+</xhtml:ul>
+
+</xhtml:ol>
+
+</ax:content>
+</page>escript: exception error: {badmap,{ok,#{default_output => standard_io,
+                               element_stack => [{startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "ul","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h4","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "ul","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h4","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h3","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "addwebsite.xhtml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "publickey.xhtml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "intro.xhtml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "ol","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "p","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h1","xhtml",[]},
+                                {startElement,"abc","content","ax",[]},
+                                {startElement,[],"pageheader",[],[]},
+                                {startElement,[],"keywords",[],[]},
+                                {startElement,[],"url",[],[]},
+                                {startElement,[],"title",[],[]},
+                                {startElement,[],"name",[],[]},
+                                {startElement,[],"page",[],[]},
+                                {startElement,"http://www.w3.org/2001/XInclude",
+                                              "include","xi",
+                                              [{attribute,"parse",[],[],"xml"},
+                                               {attribute,"href",[],[],
+                                                          "index.xml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "img","xhtml",
+                                              [{attribute,"width",[],[],
+                                                          "100%"},
+                                               {attribute,"left",[],[],
+                                                          "250px"},
+                                               {attribute,"src",[],[],
+                                                          "images/hw.png"}]},
+                                {startElement,[],"banner_image",[],[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "mailto:tony@tony.gen.nz"}]},
+                                {startElement,[],"contact-email",[],[]},
+                                {startElement,[],"contact-phone",[],[]},
+                                {startElement,[],"navtype",[],[]},
+                                {startElement,[],"homepage",[],[]},
+                                {startElement,[],"pages",[],[]},
+                                {startElement,[],"file_headers",[],[]},
+                                {startElement,[],"copydir",[],[]},
+                                {startElement,[],"resources",[],[]},
+                                {startElement,[],"html_dir",[],[]},
+                                {startElement,[],"siteurl",[],...},
+                                {startElement,[],[...],...}],
+                               escape_to_xml => false,
+                               fileinclusions => ["index.xml"],
+                               final_output => false,
+                               names_in_scope => [],
+                               output => standard_io,
+                               output_namespaces => false,
+                               prefix_next_tag => [],
+                               preserve_whitespace => true,
+                               skip_end_tag => false,
+                               tests => []},
+                             "\n"}}
+  in function  maps:find/2
+     called as maps:find(element_stack,
+                         {ok,#{default_output => standard_io,
+                               element_stack => [{startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "ul","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h4","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "ul","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h4","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h3","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "addwebsite.xhtml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "publickey.xhtml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "intro.xhtml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "li","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "ol","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "p","xhtml",[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "h1","xhtml",[]},
+                                {startElement,"abc","content","ax",[]},
+                                {startElement,[],"pageheader",[],[]},
+                                {startElement,[],"keywords",[],[]},
+                                {startElement,[],"url",[],[]},
+                                {startElement,[],"title",[],[]},
+                                {startElement,[],"name",[],[]},
+                                {startElement,[],"page",[],[]},
+                                {startElement,"http://www.w3.org/2001/XInclude",
+                                              "include","xi",
+                                              [{attribute,"parse",[],[],"xml"},
+                                               {attribute,"href",[],[],
+                                                          "index.xml"}]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "img","xhtml",
+                                              [{attribute,"width",[],[],
+                                                          "100%"},
+                                               {attribute,"left",[],[],
+                                                          "250px"},
+                                               {attribute,"src",[],[],
+                                                          "images/hw.png"}]},
+                                {startElement,[],"banner_image",[],[]},
+                                {startElement,"http://www.w3.org/1999/xhtml",
+                                              "a","xhtml",
+                                              [{attribute,"href",[],[],
+                                                          "mailto:tony@tony.gen.nz"}]},
+                                {startElement,[],"contact-email",[],[]},
+                                {startElement,[],"contact-phone",[],[]},
+                                {startElement,[],"navtype",[],[]},
+                                {startElement,[],"homepage",[],[]},
+                                {startElement,[],"pages",[],[]},
+                                {startElement,[],"file_headers",[],[]},
+                                {startElement,[],"copydir",[],[]},
+                                {startElement,[],"resources",[],[]},
+                                {startElement,[],"html_dir",[],[]},
+                                {startElement,[],"siteurl",[],...},
+                                {startElement,[],[...],...}],
+                               escape_to_xml => false,
+                               fileinclusions => ["index.xml"],
+                               final_output => false,
+                               names_in_scope => [],
+                               output => standard_io,
+                               output_namespaces => false,
+                               prefix_next_tag => [],
+                               preserve_whitespace => true,
+                               skip_end_tag => false,
+                               tests => []},
+                             "\n"})
+  in call from xslt_extn:manage_element_stack/2 (/home/tony/Projects/WebTechnologies/LearningXML/trunk/src/xslt_extn.erl, line 155)
+  in call from xslt_extn:doevent/2 (/home/tony/Projects/WebTechnologies/LearningXML/trunk/src/xslt_extn.erl, line 147)
+  in call from erlsom_sax_list:wrapCallback/2 (/home/tony/Projects/WebTechnologies/LearningXML/trunk/src/deps/erlsom/src/erlsom_sax_list.erl, line 1308)
+  in call from erlsom_sax_list:parseContentLT/2 (/home/tony/Projects/WebTechnologies/LearningXML/trunk/src/deps/erlsom/src/erlsom_sax_list.erl, line 862)
+  in call from erlsom_sax_list:parse/2 (/home/tony/Projects/WebTechnologies/LearningXML/trunk/src/deps/erlsom/src/erlsom_sax_list.erl, line 172)
+  in call from xslt_extn:main/1 (/home/tony/Projects/WebTechnologies/LearningXML/trunk/src/xslt_extn.erl, line 98)

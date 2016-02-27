@@ -1,0 +1,63 @@
+<page xmlns:xi="http://www.w3.org/2001/XInclude">
+  <name>build</name>
+  <title>Building the website</title>
+  <url>build.html</url>
+  <keywords>xml</keywords>
+  <pageheader>Tony Gen</pageheader>
+<content>
+  <p>
+Once the website static pages are generated, there is a need to
+build these pages into a webserver for deployment.  The process
+for this is as follows:
+  </p>
+<ol>
+<!-- Make these items internal links... -->
+<li>Ensure there is a site directory in website/clients</li>
+<li>Copy the website data into website/clients/&lt;client&gt;/web_root</li>
+<li>Ensure there is a handler defined in website/siteconf</li>
+<li>Build the website</li>
+<li>Test the build</li>
+<li>Preparing the webserver</li>
+<li>Install</li>
+</ol>
+<h3>Writing a siteconf</h3>
+<p>The following is siteconf file for this website.</p>
+<pre>
+<xi:include href="data/tonygenconfig.erl" parse="text"/>
+</pre>
+<h3>Building a website</h3>
+  <h4>The initial make</h4>
+<p>The build is started by executing the command:</p>
+<pre>
+  make
+</pre><p>
+In the website code directory.</p>
+<p>This build process uses relx to make an erlang install set.  Including
+all runtime libraries, compiled for the current architecture.  After this the
+content is then added to the build with the command:</p>
+<pre>
+  make static-pages
+</pre>
+<p>The content added by this command includes:</p>
+<ul>
+  <li>Static web pages</li>
+  <li>Installation utilites</li>
+</ul>
+<p>At the end of the build process, the release is stored in a directory _rel.</p>
+  <h4>Contents of the makefile</h4>
+<pre><xi:include href="data/Makefile" parse="text" /></pre>
+  <h4>The installer</h4>
+<p>The installer puts a script into /etc/init.d/ to start the webserver.
+Links to this script are put into the rc&lt;runlevel&gt;.d directories
+so that the webserver is started and stopped automatically.  The webserver
+is run as a non-priveilaged user for security purposes, the username
+for this user being a parameter in the install.  At the time the install
+is made the same information is used to make an uninstall script.</p>
+<h5>install.sh</h5>
+<pre><xi:include href="data/install.sh" parse="text" /> </pre>
+  <h4>Building for a different system</h4>
+<h3>Running the build in a test environment</h3>
+  <h4>Testing from a non-graphic build machine</h4>
+<h3>Running the installer</h3>  
+</content>
+</page>

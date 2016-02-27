@@ -1,0 +1,20 @@
+<page  xmlns:ax="abc">
+  <name>Main</name>
+  <title>Main</title>
+  <url>index.xhtml</url>
+  <keywords>xml</keywords>
+  <pageheader>Greenrose</pageheader>
+<ax:content xmlns:xh="http://www.w3.org/1999/xhtml">
+<h1>Tony's Main Page</h1>
+<p>This website is currently documenting procedures
+for making itself and keeping itself updated.  At
+the moment this is limited to static sites but as
+extra facilities are added these too will be documented
+here. </p>
+<ol>
+<li><a href="intro.xhtml">Generating a wesite with XSLT</a></li>
+<li><a href="addwebsite.xhtml">Admin guide</a></li>
+</ol>
+
+</ax:content>
+</page>

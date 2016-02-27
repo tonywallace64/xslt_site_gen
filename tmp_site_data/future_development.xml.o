@@ -1,0 +1,36 @@
+<page>
+  <name>FutureDev</name>
+  <title>Future Developments</title>
+  <url>futuredev.html</url>
+  <keywords/>
+  <pageheader/>
+<content>
+<p>
+This page represents a snapshot of intentions at the time
+of publishing.  It is subject to revision without notice.
+</p>
+<h4>Unordered list of unscheduled tasks</h4>
+<ul>
+<li>Build dynamic site for Peter's Videos</li>
+<li>Login protected private pages</li>
+<li>Data storage and retrieval for web pages</li>
+<li>Remote administration</li>
+<li>Source code control</li>
+<li>Dynamic content websites</li>
+</ul>
+<h4>Programme</h4>
+<ol>
+<li>Disable lid switch on Eee-PC</li>
+<li>Tidy up this documentation</li>
+<li>Preliminary design for web data storage and retrieval</li>
+<li>Implement sourcecode control</li>
+<li>Develop release v1.01</li>
+</ol>
+<h4>Develop with next release v1.01</h4>
+<ul>
+<li>No-compile site configuration</li>
+<li>Stylesheets part of site definition xml document</li>
+<li>Improved graphic for tony.gen.nz</li>
+</ul>
+</content>
+</page>

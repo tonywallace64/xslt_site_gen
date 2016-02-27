@@ -1,0 +1,52 @@
+<?xml version="1.0"?><!DOCTYPE html><xhtml:html  xmlns:ax="abc" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xh="http://www.w3.org/1999/xhtml"><xhtml:head ><xhtml:meta  content="xml" name="Keywords"></xhtml:meta><xhtml:title >xpath</xhtml:title><xhtml:meta  content="width=device-width, initial-scale=1" name="viewport"></xhtml:meta><xhtml:style  type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  pre { color:#800080;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body ><xhtml:nav ><xhtml:h2 >Contact</xhtml:h2><xhtml:ul ><xhtml:li >Phone: 027 2203796</xhtml:li><xhtml:li ><xhtml:a  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="whatsxml.xhtml">whatsxml</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xmlproc.xhtml">Xml processing</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="namespaces.xhtml">namespaces</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xpath.xhtml">xpath</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xslt.xhtml">xslt</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="static.xhtml">static site</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="validation.xhtml">Validation</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="splitpages.xhtml">split_pages</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="insert.xhtml">insert_content</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="build.xhtml">build</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="futuredev.xhtml">FutureDev</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="rest.xhtml">REST Resources</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section ><xhtml:a  href="index.xhtml"><xhtml:img  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" src="images/hw.png" left="250px" width="100%"></xhtml:img></xhtml:a><xhtml:br ></xhtml:br><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Introduction</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+At the last page Xml namespaces were introduced as a way of incorporating
+various xml vocabularies into our documents.  It is time to meet the first
+of these vocabularies, xpath, a tool for navigating through xml documents.</xhtml:p><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">What is XPATH?</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude"><xhtml:em >Xpath is a language for finding related nodes in an xml document.</xhtml:em></xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Xml documents are read into software, and the various parts of the language
+are parsed into nodes.</xhtml:p><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Xpath Nodes</xhtml:h3><xhtml:ul  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+<xhtml:li >elements</xhtml:li>
+<xhtml:li >attributes</xhtml:li>
+<xhtml:li >comments</xhtml:li>
+<xhtml:li >whitespace</xhtml:li>
+<xhtml:li >processing instructions</xhtml:li>
+<xhtml:li >text</xhtml:li>
+</xhtml:ul><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The relationships between
+these nodes are stored in a structure known as an xml infoset. XPATH is a language for navigating 
+an xml infoset.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">XPATH is therefore an xml query language and is itself part of other XML languages
+such as XSLT, XQUERY an XPOINTER.  Proficiency with XPATH is therefore a prerequisite
+for proficiency in these other languages.</xhtml:p><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">XPATH axes</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">To understand xpath it is necessary to have in mind two models of the xml document at the same time:
+<xhtml:ul >
+<xhtml:li >Xml document as a tree</xhtml:li>
+<xhtml:li >Xml document as a list</xhtml:li>
+</xhtml:ul></xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+If you take any xml document and print it out, and a set of coloured highlighters.  Select a node and call it the current node colour it yellow.  This is the <xhtml:em >self</xhtml:em> axis.  Firstly considering the document as a tree, this node will have a parent node, which will in turn have a parent node up until the root node is reached.  Colour each of these pink. In xpath, this is the <em >ancestor</em> axis.  The current node may have children.  Colour these, and their decendents blue, this is the <em >decendent axis</em>.  The uncoloured nodes that are above the current document constitute the <em >preceeding axis</em>, and those uncoloured nodes following the current node are the <em >following axis</em>.  Finally those other nodes with the same parent which are preceeding the current node are <em >preceeding-sibling axis</em>.  The other nodes with the same parent but going down the page are the <em >following-sibling axis</em>.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">There are other axes defined in the standard, these are easily derivable from those listed above.</xhtml:p><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">axis ordering</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">In every case the position on the axis is related to how far the node is from the current node.  The parent node is position 1 on the ancestor axis, the grandparent position 2 on the ancestor axis.  These positions are in document or reverse document order.  Document order is how close the node is on the printed page going from top to bottom.  Reverse document order is going on the page from bottom to top. Preceeding and ancestor nodes are in reverse document order, following and decendent nodes in document order.</xhtml:p><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">location paths</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">An xpath expression may result in a node set.  That is a set of qualifying nodes. The expression to find all decendents of the current node is &quot;decendents::node()&quot;.  The axis comes first, and then a node test which in this case returns any type of node whatsoever.  A location expression can contain several parts each separated by /.  Each part can be filtered by an expression in [].</xhtml:p><example  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title >Find closest ancestor page which has a url node as it&apos;s child</title>
+  <ax:content >ancestor::page[child::url][position()=1]</ax:content>
+</example><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Abbreviated syntax</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The abbreviated syntax is as follows:</xhtml:p><xhtml:ul  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+<xhtml:li ><xhtml:p >omitting an axis is short for &quot;child::&quot;</xhtml:p></xhtml:li>
+<xhtml:li ><xhtml:p >&quot;.&quot; represents &quot;self::node()&quot;</xhtml:p></xhtml:li>
+<xhtml:li ><xhtml:p >&quot;..&quot; represents &quot;parent::node()&quot;</xhtml:p></xhtml:li>
+<xhtml:li ><xhtml:p >&quot;@&quot; represents &quot;attribute::&quot;</xhtml:p></xhtml:li>
+<xhtml:li ><xhtml:p >&quot;//&quot; represents &quot;decendant-or-self::&quot;</xhtml:p></xhtml:li>
+<xhtml:li ><xhtml:p >&quot;[number]&quot; represents &quot;[position()=number]&quot;</xhtml:p></xhtml:li>
+</xhtml:ul><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Thus the previous example could be written &quot;ancestor::page[url][1]&quot;</xhtml:p></xhtml:section></xhtml:body></xhtml:html>
