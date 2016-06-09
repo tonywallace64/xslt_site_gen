@@ -1,0 +1,39 @@
+<?xml version="1.0"?><!DOCTYPE html><xhtml:html ><xhtml:head ><xhtml:meta  content="xml" name="Keywords"></xhtml:meta><xhtml:title >Split Pages</xhtml:title><xhtml:meta  content="width=device-width, initial-scale=1" name="viewport"></xhtml:meta><xhtml:style  type="text/css">
+  body {color:blue;}  
+  p  {line-height=130%;}
+  h1 {text-align:center;}
+  h2 {text-align:center;}
+  h3 {text-align:center;}
+  pre { color:#800080;}
+  a:link {color:#0000FF;}
+  a:visited {color:#C0C000;}
+  nav {
+  background-image:url(images/grgcleft2.png);
+  position: absolute;
+  top :0px;
+  bottom:0;
+  left: 0;
+  width: 240px;
+}
+  section {
+  position: relative;
+  margin-left: 250px;
+}
+</xhtml:style></xhtml:head><xhtml:body ><xhtml:nav ><xhtml:h2 >Contact</xhtml:h2><xhtml:ul ><xhtml:li >Phone: 027 2203796</xhtml:li><xhtml:li ><xhtml:a  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" href="mailto:tony@tony.gen.nz">Email: tony@tony.gen.nz</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="index.xhtml">Home Page</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="intro.xhtml">intro</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="whatsxml.xhtml">whatsxml</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xmlproc.xhtml">Xml processing</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="namespaces.xhtml">namespaces</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xpath.xhtml">xpath</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="xslt.xhtml">xslt</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="static.xhtml">static site</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="validation.xhtml">Validation</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="splitpages.xhtml">split_pages</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="insert.xhtml">insert_content</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="build.xhtml">build</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="futuredev.xhtml">FutureDev</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="rest.xhtml">REST Resources</xhtml:a></xhtml:li><xhtml:li ><xhtml:a  href="upload_video.xhtml">video</xhtml:a></xhtml:li></xhtml:ul></xhtml:nav><xhtml:section ><xhtml:a  href="index.xhtml"><xhtml:img  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude" src="images/hw.png" left="250px" width="100%"></xhtml:img></xhtml:a><xhtml:br ></xhtml:br><xhtml:h2  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Split Pages</xhtml:h2><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">My original idea was that the pagedata.xml would define the
+relationship between pages, and style information for the site.
+A build process would use this information to build the html
+webpages and each webpage would come out as a separate file.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Upon reflection I recognise that the whole website
+could have been created as a single file and intrapage  
+links used to get around the page.  The purpose of this site
+is to document how it is not what it may have been, and
+this page splitting functionality is part of the existing design</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">As XSLT 1.0 does not have the ability
+to save each page to a separate file, this is done by an external
+script written in Erlang.  Any suitable language could be used
+for this task.</xhtml:p><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">splitpages.escript</xhtml:h3><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">In this case the make_web.xsl emits a line starting with
+&quot;filename: FileNameValue&quot; where a new file named FileNameValue
+should be started.
+</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The <xhtml:a  href="splitpages.escript">splitpages</xhtml:a> source code can be viewed here.</xhtml:p><xhtml:h3  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The abc:file tag</xhtml:h3><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Another approach to splitting the pages has been to define
+an &quot;file&quot; tag in the &quot;abc&quot; namespace.  The source code here
+is again written in erlang, but this time the input is read by
+the erlsom SAX parser.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">Most of the code is merely copying the input xml to the output.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">The <xhtml:a  href="xslt_extn.erl">xslt_extn</xhtml:a> source code can be read here.</xhtml:p><xhtml:p  xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xi="http://www.w3.org/2001/XInclude">This code also includes a parse=&quot;text&quot; version of xinclude as the xmllint
+version of this appears to be broken.</xhtml:p></xhtml:section></xhtml:body></xhtml:html>

@@ -1,0 +1,4 @@
+xslt_extn: ebin/xslt_extn.beam
+	./mad release script xslt_extn
+ebin/%.beam: src/%.erl
+	erlc -o ebin $<

@@ -9,6 +9,7 @@ Freely I have received, freely I give.
 
 I acknowledge the work of the w3 consortium that made
 this work possible.
+
 -->
 
 <!--
@@ -51,7 +52,6 @@ version="1.0">
 <!--
   <xsl:import href="ajw_utils.xsl" />
 -->
-
   <xsl:template match='/site'>
     <xsl:comment>Generated web pages</xsl:comment>
     <site_pages>
@@ -69,85 +69,87 @@ version="1.0">
 </xsl:template>
 
 <xsl:template match="page">
-<xsl:element name="ax:file">
-<xsl:attribute name="filename">
-  <xsl:value-of select="./url" />
-</xsl:attribute>
-<xsl:message>File <xsl:value-of select="./url" /></xsl:message>
-<xsl:text xml:space="preserve" >
-</xsl:text>
-<ax:xml_tags>
-<xsl:value-of select="ancestor-or-self::node()/file_headers" />
-</ax:xml_tags>
-<xsl:element name="xhtml:html" namespace="http://www.w3.org/1999/xhtml">
-<xhtml:head>
-<xhtml:meta name="Keywords" content='{keywords}' />
-<xhtml:title>
-  <xsl:value-of select="./title" />
-</xhtml:title>
-<xhtml:meta name="viewport" content="width=device-width, initial-scale=1" />
-<xhtml:style type="text/css">
-  body {color:blue;}  
-  p  {line-height=130%;}
-  h1 {text-align:center;}
-  h2 {text-align:center;}
-  h3 {text-align:center;}
-  pre { color:#800080;}
-  a:link {color:#0000FF;}
-  a:visited {color:#C0C000;}
-  nav {
-  background-image:url(images/grgcleft2.png);
-  position: absolute;
-  top :0px;
-  bottom:0;
-  left: 0;
-  width: 240px;
-}
-  section {
-  position: relative;
-  margin-left: 250px;
-}
-</xhtml:style>
-  <xsl:copy-of select="./model" />
-
-</xhtml:head>
-<xhtml:body   xmlns:xhtml="http://www.w3.org/1999/xhtml" >
-  <xhtml:nav>
-  <xhtml:h2>Contact</xhtml:h2>
-  <xhtml:ul>
-  <xhtml:li><xsl:value-of select="ancestor::pages/contact-phone"/></xhtml:li>
-  <xhtml:li><xsl:copy-of  select="ancestor::pages/contact-email/*"/></xhtml:li>
-  <xhtml:li><xhtml:a><xsl:attribute name="href"><xsl:value-of select="ancestor::pages/homepage"/></xsl:attribute>Home Page</xhtml:a></xhtml:li>
-  <xsl:choose>
-    <xsl:when test="ancestor::pages[navtype='mesh']">
-      <xsl:call-template name="meshindex" />
-    </xsl:when>
-    <xsl:when test="ancestor::pages[navtype='linear']">
-      <xsl:call-template name="linearindex" />
-    </xsl:when>
-    <xsl:otherwise>
-      Failed to match index template:
-      <xsl:value-of select="ancestor::pages/navtype"/> 
-      Current node is:
-      <xsl:value-of select="string(./node())" />
-    </xsl:otherwise>
-  </xsl:choose>
-  </xhtml:ul>
-</xhtml:nav> 
-<xhtml:section>
-  <xsl:message>section</xsl:message>
-  <xhtml:a>
-    <xsl:attribute name="href">
-      <xsl:value-of select="ancestor::pages/homepage"/>
+  <xsl:element name="ax:file">
+    <xsl:attribute name="filename">
+      <xsl:value-of select="./url" />
     </xsl:attribute>
-    <xsl:copy-of select="ancestor::pages/banner_image/child::xhtml:img"/>
-  </xhtml:a>
-  <xhtml:br />
-  <xsl:copy-of select="./ax:content/*"/>
-</xhtml:section>
-</xhtml:body>
-</xsl:element>
-</xsl:element>
+    <xsl:message>File <xsl:value-of select="./url" /></xsl:message>
+    <xsl:text xml:space="preserve" >
+    </xsl:text>
+    <ax:xml_tags>
+      <xsl:value-of select="ancestor-or-self::node()/file_headers" />
+    </ax:xml_tags>
+    <xhtml:html>
+      <xhtml:head>
+	<xhtml:meta name="Keywords" content='{keywords}' />
+	<xhtml:title>
+	  <xsl:value-of select="./title" />
+	</xhtml:title>
+	<xhtml:meta name="viewport" content="width=device-width, initial-scale=1" />
+	<xhtml:style type="text/css">
+	  body {color:blue;}  
+	  p  {line-height=130%;}
+	  h1 {text-align:center;}
+	  h2 {text-align:center;}
+	  h3 {text-align:center;}
+	  pre { color:#800080;}
+	  a:link {color:#0000FF;}
+	  a:visited {color:#C0C000;}
+	  nav {
+	    background-image:url(images/grgcleft2.png);
+	    position: absolute;
+	    top :0px;
+	    bottom:0;
+	    left: 0;
+	    width: 240px;
+	    }
+	 section {
+	    position: relative;
+	    margin-left: 250px;
+	    }
+	</xhtml:style>
+	<xsl:copy-of select="./model" />
+
+      </xhtml:head>
+      <xhtml:body   xmlns:xhtml="http://www.w3.org/1999/xhtml" >
+	<xhtml:nav>
+	  <xhtml:h2>Contact</xhtml:h2>
+	  <xhtml:ul>
+	    <xhtml:li><xsl:value-of select="ancestor::pages/contact-phone"/></xhtml:li>
+	    <xhtml:li><xsl:copy-of  select="ancestor::pages/contact-email/*"/></xhtml:li>
+	    <xhtml:li>
+	      <xhtml:a><xsl:attribute name="href"><xsl:value-of select="ancestor::pages/homepage"/></xsl:attribute>Home Page</xhtml:a>
+	    </xhtml:li>
+	    <xsl:choose>
+	      <xsl:when test="ancestor::pages[navtype='mesh']">
+		<xsl:call-template name="meshindex" />
+	      </xsl:when>
+	      <xsl:when test="ancestor::pages[navtype='linear']">
+		<xsl:call-template name="linearindex" />
+	      </xsl:when>
+	      <xsl:otherwise>
+		Failed to match index template:
+		<xsl:value-of select="ancestor::pages/navtype"/> 
+		Current node is:
+		<xsl:value-of select="string(./node())" />
+	      </xsl:otherwise>
+	    </xsl:choose>
+	  </xhtml:ul>
+	</xhtml:nav> 
+	<xhtml:section>
+	  <xsl:message>section</xsl:message>
+	  <xhtml:a>
+	    <xsl:attribute name="href">
+	      <xsl:value-of select="ancestor::pages/homepage"/>
+	    </xsl:attribute>
+	    <xsl:copy-of select="ancestor::pages/banner_image/child::xhtml:img"/>
+	  </xhtml:a>
+	  <xhtml:br />
+	  <xsl:copy-of select="./ax:content/*"/>
+	</xhtml:section>
+      </xhtml:body>
+      </xhtml:html>
+  </xsl:element>
 </xsl:template>
 
 <xsl:template name="meshindex">

@@ -4,7 +4,7 @@
   <url>publickey.xhtml</url>
   <keywords>xml</keywords>
   <pageheader>Greenrose</pageheader>
-<ax:content>
+<xhtml:html>
 <xhtml:p>Communications with Tony Wallace can be encrypted with the following
 public key</xhtml:p>
 <xhtml:pre>
@@ -41,5 +41,5 @@ FBLtJClYygBz9Ro6DQAIcQX1Wqvcv3jLszOzH2hiu1Yg2Ipz0Sdc
 -----END PGP PUBLIC KEY BLOCK-----
 ]]>
 </xhtml:pre>
-</ax:content>
+</xhtml:html>
 </page>

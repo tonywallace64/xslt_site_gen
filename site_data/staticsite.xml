@@ -45,6 +45,7 @@ retrofitted relatively easily.</xhtml:p>
 <xhtml:p>This is the definition for this page.  Everything about this
 page, its name, its url and all other things required for its
 generation are stored here...</xhtml:p>
+<xhtml:h2 >staticsite.xml</xhtml:h2>
 <xhtml:pre><xi:include href="staticsite.xml" parse="text"/></xhtml:pre>
 
 <xhtml:h2 >An XSLT utility file: ajw_utils.xsl</xhtml:h2>
@@ -53,7 +54,7 @@ This is one of two files for converting this site data into html.
 </xhtml:p>
 <xhtml:pre ><xi:include  parse="text" href="ajw_utils.xsl"></xi:include></xhtml:pre><xhtml:h2 >XSLT file to generate HTML</xhtml:h2>
 <xhtml:p>
-This file, make_web.xsl generates each web page including navigation bar.
+This file, <xhtml:em>make_web.xsl</xhtml:em> generates each web page including navigation bar.
 </xhtml:p>
 <xhtml:pre>
 <xi:include  href="make_web.xsl" parse="text"></xi:include>
@@ -72,7 +73,7 @@ using a general purpose language like erlang allows complete
 flexibility.</xhtml:p>  
 <xhtml:p>Finally, there is a significant amount of code dedicated
 to self testing.</xhtml:p>
-<xhtml:p>This code is shown here.</xhtml:p>
+<xhtml:p>This code is shown here.  <xhtml:em>xslt_extn.erl</xhtml:em></xhtml:p>
 <xhtml:pre>
 <xi:include href="../src/xslt_extn.erl" parse="text" />
 </xhtml:pre>

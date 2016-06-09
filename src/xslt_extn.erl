@@ -34,7 +34,7 @@ standard in that many options provided for in the standard are ignored.
 %% ****************************************************
 
 
--export([main/1,doevent/2,file/1]).
+-export([main/1,doevent/2,file/1,xml_parameter_formatting/1]).
 -export([test/0,test1/0,test2/0,test3/0,test4/0,test5/0,test6/0,
 	 test7/0,test8/0,test9/0,test10/0]).
 -include ("erlsom_sax.hrl").
@@ -71,16 +71,21 @@ standard in that many options provided for in the standard are ignored.
 -define (FINAL_OUTPUT_DEFAULT,false).
 -define (DATA_DIR,".").
 -define (MUST_MATCH,"~s ~s must match ~s ~s").
+
+
+%% first_tag in the first tag after a file split,
+%% a new namespace declaration needs to be put
+%% into that first tag.
 default_state() ->
        #{default_output => standard_io,
    	output => standard_io, 
 	fileinclusions => ordsets:new(),
 	tests => [],
 	escape_to_xml => false,
+	first_tag => false,
 	final_output => ?FINAL_OUTPUT_DEFAULT,
 	preserve_whitespace => ?PRESERVE_WHITESPACE_DEFAULT,
 	element_stack => [],
-	output_namespaces => false,
 	names_in_scope => []}.    
 
 main(InputParameters) -> 
@@ -146,7 +151,7 @@ doevent(Event,State) when is_map(State) ->
     Ctx = {S1,_ParentNS,_ParentTag,_Ancestors} =
 	manage_element_stack(Event,State),
     true = is_map(S1),
-    ?DEBUG2("S1",S1),
+    %% ?DEBUG2("S1",S1),
     R = do_evt_1(Event,Ctx),
     true = is_map(R),
     ?DEBUG(R),
@@ -158,6 +163,8 @@ manage_element_stack(Event,State) when is_map(State) ->
     {_S1,_ParentNS,_ParentTag,_Ancestors} = es_1(ES,Event,State).
 
 es_1([],Event={startElement,_,_,_,_},State) ->
+    %% in case of empty element stack getting a startElement,
+    %% put that element onto the stack
     {State#{element_stack => [Event]},"","",[]};
 es_1([],{endElement,_,_,_,_},_) ->
     throw("Closing tag without an opening tag");
@@ -181,17 +188,17 @@ es_1([{startElement,ParentNS1,ParentTag1,_,_}|Ancestors1],_,State) ->
 do_evt_1({startElement,"abc","file",_,AttrList},{S1,_,_,_}) ->    
     Filename = attrvalue("filename",AttrList),
     {ok,OldFD} = maps:find(output,S1),
-    S1#{output => set_output_file(Filename,OldFD)};
+    S1#{output => set_output_file(Filename,OldFD), first_tag => true};
 do_evt_1(OT2={startElement,"abc","xml_tags",_,[]},{S1,_,_,_}) ->    
     {ok,FinalOutput} = maps:find(final_output,S1),
     case FinalOutput of
 	true ->
 	    S1#{escape_to_xml => true};
         false ->
-	    {ok,NSDecl2}=maps:find(prefix_next_tag,S1),
 	    {ok,OldFD} = maps:find(output,S1),
-	    write_open_tag(OT2,OldFD,NSDecl2),
-	    S1
+	    WriteNamespaces = get_namespaces(S1),
+	    write_open_tag(OT2,OldFD,WriteNamespaces),
+	    S1#{first_tag => false}
     end;
 do_evt_1({startElement,"http://www.w3.org/2001/XInclude","include",_,AttrList},{S1,_,_,_}) ->    
     ?DEBUGSTR("xinclude start tag found"),
@@ -201,10 +208,10 @@ do_evt_1({startElement,"http://www.w3.org/2001/XInclude","include",_,AttrList},{
     S1;
 do_evt_1(OT=#startElement{},{S1,_,_,_}) ->    
     ?DEBUGSTR("other start tag found"),
-    {ok,NSDecl}=maps:find(prefix_next_tag,S1),
+    WriteNamespaces = get_namespaces(S1),
     {ok,OldFD} = maps:find(output,S1),
-    write_open_tag(OT,OldFD,NSDecl),
-    S1#{prefix_next_tag => ""};
+    write_open_tag(OT,OldFD,WriteNamespaces),
+    S1#{prefix_next_tag => "",first_tag => false};
 do_evt_1({endElement,"http://www.w3.org/2001/XInclude","include",_},{S1,_,_,_}) ->    
     S1;
 do_evt_1( CT2={endElement,"abc","xml_tags",_},{S1,_,_,_}) ->    
@@ -248,9 +255,17 @@ do_evt_1({processingInstruction,Type,Value} ,{S1,_,_,_}) ->
     {ok,OldFD} = maps:find(output,S1),
     io:fwrite(OldFD,"~s",["<?"++Type++Value++"?>"]),
     S1;
+
 do_evt_1({startPrefixMapping,Prefix,Url} ,{S1,_,_,_}) ->    
     {ok,PrefixNextTag} = maps:find(prefix_next_tag,S1),
-    S1#{prefix_next_tag => [{Prefix,Url}|PrefixNextTag]};
+    {ok,Nis} = maps:find(names_in_scope,S1),
+    S1#{prefix_next_tag => add_property({Prefix,Url},PrefixNextTag),
+	names_in_scope  => add_property({Prefix,Url},Nis)};
+
+do_evt_1({stopPrefixMapping,Prefix}, {S1,_,_,_}) ->
+    ONis = maps:find(names_in_scope,S1),
+    S1#{names_in_scope => proplists:delete(Prefix,ONis)};
+    
 do_evt_1({ignorableWhitespace,String} ,{S1,ParentNS,ParentTag,_}) ->    
 	    %% ignore whitespace after a xml_tags tag
 	    {ok,P} = maps:find(preserve_whitespace,S1),
@@ -268,6 +283,18 @@ do_evt_1({ignorableWhitespace,String} ,{S1,ParentNS,ParentTag,_}) ->
 do_evt_1(_,{S1,_,_,_}) ->    
     S1.
 
+get_namespaces(S1) ->
+    get_namespaces(S1,maps:find(first_tag,S1)).
+get_namespaces(S1,{ok,true}) ->
+    {ok,NSDecl}=maps:find(names_in_scope,S1),
+    NSDecl;
+get_namespaces(S1,{ok,false}) ->		       
+    {ok,NSDecl} = maps:find(prefix_next_tag,S1),
+    NSDecl.
+
+add_property(Entry={Key,_Value},PropList) ->
+    L1 = proplists:delete(Key,PropList),
+    [Entry|L1].
 
 insert_file(Filename,[],S1) ->
     insert_file_xml(Filename,S1);

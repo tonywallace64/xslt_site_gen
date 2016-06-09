@@ -4,7 +4,7 @@
   <url>intro.xhtml</url>
   <keywords>xml</keywords>
   <pageheader>Greenrose</pageheader>
-<ax:content xmlns:xh="http://www.w3.org/1999/xhtml">
+<xh:html xmlns:xh="http://www.w3.org/1999/xhtml">
 <xh:p>This is the introduction page to my xml diary.  It is not
 a diary in the sense of a chronology.  It is not a book in
 that it will never be complete.  It is not a blog as I ask
@@ -54,5 +54,5 @@ tools  that are free.  To keep related data together rather than normalised
 into separate tables. To build systems that are maintainable,
 scalable, and parallel processor friendly.</xh:p>
 <xh:p>This quest is far from over, but I gladly share my wanderings.</xh:p>
-</ax:content>
+</xh:html>
 </page>

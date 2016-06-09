@@ -39,6 +39,7 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <xi:include href="build.xml" parse="xml" />
     <xi:include href="future_development.xml" parse="xml" />
     <xi:include href="rest.xml" parse="xml" />
+    <xi:include href="video.xml" parse="xml" />
   </pages>
   <pages>
     <homepage>index.xhtml</homepage>

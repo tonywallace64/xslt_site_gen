@@ -1,0 +1,23 @@
+<page xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <name>video</name>
+  <title>Upload Video</title>
+  <url>upload_video.xhtml</url>
+  <pageheader>
+  </pageheader>
+  <keywords>video</keywords>
+  <!-- Access camera on modile device 
+	//<input type="file" accept="image/*;capture=camera" />
+	//<input type="file" accept="image/*" capture />
+	//<input type="file" accept="video/*" capture />
+	//<input type="file" accept="audio/*" capture />
+
+  -->
+  <html>
+    <head>
+    </head>
+    <body>
+      <input type="file" accept="video/*" capture="true" />
+    </body>
+  </html>
+  
+</page>
